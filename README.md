@@ -74,25 +74,6 @@ This project aims to:
 
 ---
 
-## Project Structure
-
-global-economic-indicators-analysis/
-│
-├── README.md # Project documentation
-├── requirements.txt # Python dependencies
-│
-├── notebooks/ # Jupyter Notebooks
-│ └── exploratory_data_analysis.ipynb
-│
-├── visuals/ # Output plots, heatmaps, and charts
-│ └── correlation_matrix.png
-│ └── fdi_vs_gdp.png
-│
-└── scripts/ # Python scripts for cleaning and analysis
-└── clean_data.py
-
----
-
 ## Data Cleaning & Preparation
 Steps performed before analysis:
 - Removed **duplicate columns** (`GDP_BN`, `GNI_BN`, `FDI_BN`, etc.)
