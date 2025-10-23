@@ -105,7 +105,7 @@ The EDA focused on identifying **patterns, anomalies, and relationships** betwee
 
 ---
 
-##Research Questions & Insights
+## Research Questions & Insights
 | Research Question | Insight |
 |-------------------|----------|
 | Does GDP strongly correlate with GNI? | Yes, correlation ≈ 1.00 |
@@ -122,31 +122,8 @@ The EDA focused on identifying **patterns, anomalies, and relationships** betwee
 -  **Boxplots:** Highlighting outliers in inflation and unemployment.  
 -  **Pairplots:** Relationships among social and economic indicators.
 
-Example correlation heatmap:  
-*(to be added from /visuals/correlation_heatmap.png)*
 
 ---
-
-## ⚙️ How to Run This Project
-# Clone the repository
-git clone https://github.com/rahulgoogikoll/global-economic-indicators-analysis.git
-
-# Navigate into the folder
-cd global-economic-indicators-analysis
-
-# Create and activate a virtual environment
-python -m venv env
-env\Scripts\activate     # for Windows
-source env/bin/activate  # for macOS/Linux
-
-# Install dependencies
-pip install -r requirements.txt
-
-#Launch Jupyter Notebook
-jupyter notebook
-Open the notebook:
-
-notebooks/exploratory_data_analysis.ipynb
 
 ## Key Findings
 
