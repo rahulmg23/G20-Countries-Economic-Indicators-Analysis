@@ -1,10 +1,10 @@
-# 🌍 Global Economic Indicators Analysis
+# Global Economic Indicators Analysis
 
 Exploring key economic trends and global development indicators such as GDP, GNI, Inflation, FDI, Literacy, and more — to understand how various macroeconomic factors influence growth and sustainability across countries.
 
 ---
 
-## 🧭 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Business Problem](#business-problem)
 - [Dataset](#dataset)
@@ -21,7 +21,7 @@ Exploring key economic trends and global development indicators such as GDP, GNI
 
 ---
 
-## 🌐 Overview
+## Overview
 This project performs a **comprehensive exploratory data analysis (EDA)** of global economic indicators using Python.  
 It identifies relationships among GDP, inflation, literacy, and investment trends, helping policymakers, analysts, and students understand **economic growth drivers** and **development disparities**.
 
@@ -65,8 +65,8 @@ This project aims to:
 
 ---
 
-## 🧰 Tools & Technologies
-- **Language:** Python 🐍  
+## ools & Technologies
+- **Language:** Python 
 - **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, SciPy  
 - **Visualization:** Correlation Heatmaps, Pair Plots, Trend Charts  
 - **Environment:** Jupyter Notebook  
@@ -74,15 +74,12 @@ This project aims to:
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 global-economic-indicators-analysis/
 │
 ├── README.md # Project documentation
 ├── requirements.txt # Python dependencies
-│
-├── data/ # Input datasets
-│ └── global_indicators.csv
 │
 ├── notebooks/ # Jupyter Notebooks
 │ └── exploratory_data_analysis.ipynb
@@ -107,7 +104,7 @@ Steps performed before analysis:
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 The EDA focused on identifying **patterns, anomalies, and relationships** between economic variables.
 
 ### Key Analyses Conducted:
@@ -127,22 +124,22 @@ The EDA focused on identifying **patterns, anomalies, and relationships** betwee
 
 ---
 
-## 💡 Research Questions & Insights
+##Research Questions & Insights
 | Research Question | Insight |
 |-------------------|----------|
-| Does GDP strongly correlate with GNI? | ✅ Yes, correlation ≈ 1.00 |
-| Is inflation inversely related to life expectancy? | ✅ Yes, moderate negative correlation |
+| Does GDP strongly correlate with GNI? | Yes, correlation ≈ 1.00 |
+| Is inflation inversely related to life expectancy? | Yes, moderate negative correlation |
 | Does FDI boost exports? | ⚖️ Weak positive correlation found |
-| Are literacy rates linked to unemployment reduction? | ⚙️ Moderate correlation observed |
-| Which countries show best GDP–Inflation balance? | 🌏 Developed economies like the US, Japan, Germany |
+| Are literacy rates linked to unemployment reduction? |  Moderate correlation observed |
+| Which countries show best GDP–Inflation balance? | Developed economies like the US, Japan, Germany |
 
 ---
 
-## 📈 Visualizations
-- 🌡️ **Correlation Heatmap:** Shows strong relationships between GDP, GNI, and FDI.  
-- 📊 **Trend Charts:** GDP vs. Year, FDI vs. Year.  
-- 📉 **Boxplots:** Highlighting outliers in inflation and unemployment.  
-- 📚 **Pairplots:** Relationships among social and economic indicators.
+## Visualizations
+-  **Correlation Heatmap:** Shows strong relationships between GDP, GNI, and FDI.  
+-  **Trend Charts:** GDP vs. Year, FDI vs. Year.  
+-  **Boxplots:** Highlighting outliers in inflation and unemployment.  
+-  **Pairplots:** Relationships among social and economic indicators.
 
 Example correlation heatmap:  
 *(to be added from /visuals/correlation_heatmap.png)*
@@ -168,10 +165,9 @@ pip install -r requirements.txt
 jupyter notebook
 Open the notebook:
 
-bash
-Copy code
 notebooks/exploratory_data_analysis.ipynb
-🧾 Key Findings
+
+Key Findings
 GDP and GNI show near-perfect correlation (1.00) → strong economic consistency.
 
 Inflation tends to negatively affect life expectancy and GDP growth.
@@ -182,7 +178,7 @@ Unemployment and poverty rates are interlinked with education and infrastructure
 
 Developed nations show stable inflation and strong GNI, while emerging economies exhibit volatility.
 
-🚀 Future Scope
+Future Scope
 Expand analysis to 200+ countries with live World Bank APIs.
 
 Integrate Machine Learning for GDP prediction based on multiple indicators.
