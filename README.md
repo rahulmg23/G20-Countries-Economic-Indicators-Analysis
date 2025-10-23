@@ -29,7 +29,7 @@ By leveraging **data-driven insights**, we aim to reveal how interconnected glob
 
 ---
 
-## 💼 Business Problem
+## Business Problem
 Economic indicators influence critical decisions such as:
 - **Government policies** for sustainable growth and trade.
 - **Investment strategies** in emerging and developed markets.
@@ -43,7 +43,7 @@ This project aims to:
 
 ---
 
-## 📊 Dataset
+## Dataset
 **Source:** World Development Indicators (manually curated / CSV file)  
 **Records:** 114 rows × 22 columns  
 **Time Period:** 2000–2023  
@@ -93,7 +93,7 @@ global-economic-indicators-analysis/
 
 ---
 
-## 🧹 Data Cleaning & Preparation
+## Data Cleaning & Preparation
 Steps performed before analysis:
 - Removed **duplicate columns** (`GDP_BN`, `GNI_BN`, `FDI_BN`, etc.)
 - Converted **Year** column to `datetime` type.
@@ -147,27 +147,28 @@ Example correlation heatmap:
 ---
 
 ## ⚙️ How to Run This Project
-# 1️⃣ Clone the repository
+# Clone the repository
 git clone https://github.com/rahulgoogikoll/global-economic-indicators-analysis.git
 
-# 2️⃣ Navigate into the folder
+# Navigate into the folder
 cd global-economic-indicators-analysis
 
-# 3️⃣ Create and activate a virtual environment
+# Create and activate a virtual environment
 python -m venv env
 env\Scripts\activate     # for Windows
 source env/bin/activate  # for macOS/Linux
 
-# 4️⃣ Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 5️⃣ Launch Jupyter Notebook
+#Launch Jupyter Notebook
 jupyter notebook
 Open the notebook:
 
 notebooks/exploratory_data_analysis.ipynb
 
-Key Findings
+## Key Findings
+
 GDP and GNI show near-perfect correlation (1.00) → strong economic consistency.
 
 Inflation tends to negatively affect life expectancy and GDP growth.
@@ -178,12 +179,11 @@ Unemployment and poverty rates are interlinked with education and infrastructure
 
 Developed nations show stable inflation and strong GNI, while emerging economies exhibit volatility.
 
-Future Scope
+## Future Scope
+
 Expand analysis to 200+ countries with live World Bank APIs.
 
 Integrate Machine Learning for GDP prediction based on multiple indicators.
-
-Build Power BI dashboard for interactive visualization.
 
 Perform cluster analysis to group countries by economic similarity.
 
