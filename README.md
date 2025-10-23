@@ -75,6 +75,7 @@ This project aims to:
 ---
 
 ## 🗂️ Project Structure
+
 global-economic-indicators-analysis/
 │
 ├── README.md # Project documentation
@@ -92,9 +93,6 @@ global-economic-indicators-analysis/
 │
 └── scripts/ # Python scripts for cleaning and analysis
 └── clean_data.py
-
-yaml
-Copy code
 
 ---
 
@@ -152,7 +150,6 @@ Example correlation heatmap:
 ---
 
 ## ⚙️ How to Run This Project
-```bash
 # 1️⃣ Clone the repository
 git clone https://github.com/rahulgoogikoll/global-economic-indicators-analysis.git
 
@@ -197,7 +194,7 @@ Perform cluster analysis to group countries by economic similarity.
 👨‍💻 Author & Contact
 Rahul Googikoll
 📍 Goa, India
-💼 Java Full Stack Developer | Aspiring Data & DevOps Engineer
+💼 Java Full Stack Developer | Aspiring Data Analyst & Data Engineer
 📧 Email: raulgoogikoll23@gmail.com
 🔗 LinkedIn
 🔗 GitHub
