@@ -1,4 +1,4 @@
-# Global Economic Indicators Analysis
+# G20 Countries Economic Indicators Analysis
 
 Exploring key economic trends and global development indicators such as GDP, GNI, Inflation, FDI, Literacy, and more — to understand how various macroeconomic factors influence growth and sustainability across countries.
 
