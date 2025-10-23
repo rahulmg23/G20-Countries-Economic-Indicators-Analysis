@@ -1542,7 +1542,7 @@ plt.show()
 
 
     
-![png](output_30_0.png)<img width="1410" height="990" alt="output_30_0" src="https://github.com/user-attachments/assets/ff1d6f6a-3be1-4272-b9b8-c0ec1919fdb9" />
+   <img width="1410" height="990" alt="output_30_0" src="https://github.com/user-attachments/assets/ff1d6f6a-3be1-4272-b9b8-c0ec1919fdb9" />
 
     
 
@@ -1590,10 +1590,8 @@ plt.tight_layout()
 plt.show()
 ```
 
-
     
-![png](output_32_0.png)
-    
+<img width="1389" height="990" alt="output_32_0" src="https://github.com/user-attachments/assets/f095e384-c4c5-4901-8516-066914a7166b" />
 
 
 
@@ -1769,9 +1767,8 @@ plt.show()
 ```
 
 
-    
-![png](output_36_0.png)
-    
+        
+<img width="932" height="724" alt="output_36_0" src="https://github.com/user-attachments/assets/49d12ec6-16a8-4ec1-af18-e1c9cfb6937c" />
 
 
 
@@ -2256,8 +2253,8 @@ plt.show()
 
 
     
-![png](output_40_0.png)
     
+<img width="900" height="920" alt="output_40_0" src="https://github.com/user-attachments/assets/91b50172-e982-43cb-a1cf-6aad69515f33" />
 
 
 
@@ -2269,9 +2266,8 @@ plt.show()
 ```
 
 
-    
-![png](output_41_0.png)
-    
+        
+<img width="412" height="390" alt="output_41_0" src="https://github.com/user-attachments/assets/98e3ed81-65eb-40f4-a362-f2ce646c965f" />
 
 
 
@@ -2281,9 +2277,8 @@ plt.show()
 ```
 
 
-    
-![png](output_42_0.png)
-    
+        
+<img width="385" height="390" alt="output_42_0" src="https://github.com/user-attachments/assets/11ef39ac-fc8e-4a51-9e8a-0b3a727ab992" />
 
 
 
@@ -2294,8 +2289,8 @@ plt.show()
 
 
     
-![png](output_43_0.png)
-    
+<img width="385" height="390" alt="output_43_0" src="https://github.com/user-attachments/assets/ddfad655-46f1-420c-9d80-0f44e3e058bc" />
+
 
 
 
@@ -4057,9 +4052,8 @@ plt.show()
 ```
 
 
-    
-![png](output_56_0.png)
-    
+       
+<img width="922" height="586" alt="output_56_0" src="https://github.com/user-attachments/assets/3c9212e1-e554-48b3-9db2-dadff1e7fb35" />
 
 
 Analyzing the Foreign Direct Investments:
@@ -4330,9 +4324,8 @@ plt.show()
 ```
 
 
-    
-![png](output_60_0.png)
-    
+        
+<img width="940" height="586" alt="output_60_0" src="https://github.com/user-attachments/assets/6ee86bc9-018d-4c4a-9deb-16914c90a33e" />
 
 
 
@@ -4530,8 +4523,7 @@ plt.show()
 
 
     
-![png](output_63_0.png)
-    
+<img width="844" height="371" alt="output_63_0" src="https://github.com/user-attachments/assets/175dbe8d-a537-4183-b14d-6cc0b655f6f4" />
 
 
 
@@ -4544,9 +4536,8 @@ plt.show()
 ```
 
 
-    
-![png](output_64_0.png)
-    
+        
+<img width="858" height="375" alt="output_64_0" src="https://github.com/user-attachments/assets/da4ab313-904d-4bef-b33c-1a4c6d9110bd" />
 
 
 
@@ -4557,9 +4548,8 @@ plt.show()
 ```
 
 
-    
-![png](output_65_0.png)
-    
+        
+<img width="858" height="371" alt="output_65_0" src="https://github.com/user-attachments/assets/70c46191-6b9c-4126-a4f3-c9bb4207402a" />
 
 
 
