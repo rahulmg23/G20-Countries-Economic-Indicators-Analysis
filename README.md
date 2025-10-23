@@ -4742,10 +4742,10 @@ Integrate Machine Learning for GDP prediction based on multiple indicators.
 
 Perform cluster analysis to group countries by economic similarity.
 
-👨‍💻 Author & Contact
+## Author & Contact
 Rahul Googikoll
 📍 Goa, India
-💼 Java Full Stack Developer | Aspiring Data Analyst & Data Engineer
+Java Full Stack Developer | Aspiring Data Analyst & Data Engineer
 📧 Email: raulgoogikoll23@gmail.com
-🔗 LinkedIn
-🔗 GitHub
+🔗 LinkedIn: https://www.linkedin.com/in/rahulgoogikoll
+🔗 Portfolio: https://master--rahulgoogikolll2001.netlify.app/
