@@ -123,7 +123,6 @@ The EDA focused on identifying **patterns, anomalies, and relationships** betwee
 -  **Pairplots:** Relationships among social and economic indicators.
 
 --
-pip install -U wbdata
 
 
 ```python
@@ -133,13 +132,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import wbdata
 ```
-
-
-```python
-wbdata.get_sources()
-```
-
-
 
 
       id  name
@@ -4703,6 +4695,8 @@ Unemployment and poverty rates are interlinked with education and infrastructure
 
 Developed nations show stable inflation and strong GNI, while emerging economies exhibit volatility.
 
+---
+
 ## Future Scope
 
 Expand analysis to 200+ countries with live World Bank APIs.
@@ -4722,25 +4716,6 @@ Rahul Googikoll
 
 ---
 
-## Key Findings
-
-GDP and GNI show near-perfect correlation (1.00) → strong economic consistency.
-
-Inflation tends to negatively affect life expectancy and GDP growth.
-
-FDI inflows correlate positively with exports, suggesting global investment supports trade.
-
-Unemployment and poverty rates are interlinked with education and infrastructure gaps.
-
-Developed nations show stable inflation and strong GNI, while emerging economies exhibit volatility.
-
-## Future Scope
-
-Expand analysis to 200+ countries with live World Bank APIs.
-
-Integrate Machine Learning for GDP prediction based on multiple indicators.
-
-Perform cluster analysis to group countries by economic similarity.
 
 ## Author & Contact
 Rahul Googikoll
