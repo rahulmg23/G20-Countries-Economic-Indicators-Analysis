@@ -421,11 +421,11 @@ The countries on the right side experienced a decline (negative change) in life 
 3. **Policy Focus:** The data provides clear evidence of **divergent health outcomes** during a critical period. Policy analysts should investigate whether the top-gaining countries implemented specific, effective health policies that the declining countries failed to adopt or sustain.
 
 ---
+## Analysis of Global Capital Flow Trends (2015-2020)
+
 <img width="940" height="586" alt="8f730fe4-015f-44cf-b083-ba0afadf85c8" src="https://github.com/user-attachments/assets/8e070dab-c479-4d4f-966d-1823aa63e29a" />
 
 This bar chart illustrates the **Percentage Change in Foreign Direct Investment (FDI) from 2015 to 2020** for a selection of major global economies. This data highlights which countries successfully attracted or retained capital, and which experienced significant divestment, during a period of moderate economic growth followed by the initial global shock of 2020.
-
-## Analysis of Global Capital Flow Trends (2015-2020)
 
 The chart reveals an extremely polarized landscape for capital flow, demonstrating that investment growth was highly concentrated in a few markets while many others saw stagnation or massive withdrawal.
 
@@ -458,7 +458,7 @@ The right side of the chart shows a long list of countries where FDI growth was 
 3. **FDI as a Leading Indicator:** The stark polarization in this chart signals **future economic divergence**. Countries that successfully attracted capital (Group 1) are likely poised for stronger future economic growth, while those losing capital (Group 2) face headwinds in sustaining long-term development.
 
 ---
-## Analysis of Global Capital Flow Trends (2015-2020)
+## Analysis of Percentage Change in Foreign Direct Investment (FDI) from 2015 to 2020
 
 
 <img width="940" height="586" alt="504560452-6ee86bc9-018d-4c4a-9deb-16914c90a33e" src="https://github.com/user-attachments/assets/cbc51d65-9e0f-4993-9ff4-eb6d69d1dd5a" />
@@ -622,7 +622,6 @@ The chart reveals a period of increasing trade deficit followed by a dramatic re
 
 Author & Contact
 👨‍💻 Rahul Googikoll
-
 Role: Data Analyst
 Email: raulgoogikoll23@gmail.com
 LinkedIn: https://www.linkedin.com/in/rahulgoogikoll
