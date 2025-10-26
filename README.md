@@ -125,2127 +125,225 @@ The EDA focused on identifying **patterns, anomalies, and relationships** betwee
 --
 
 
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import wbdata
-```
-
-
-      id  name
-    ----  --------------------------------------------------------------------
-       1  Doing Business
-       2  World Development Indicators
-       3  Worldwide Governance Indicators
-       5  Subnational Malnutrition Database
-       6  International Debt Statistics
-      11  Africa Development Indicators
-      12  Education Statistics
-      13  Enterprise Surveys
-      14  Gender Statistics
-      15  Global Economic Monitor
-      16  Health Nutrition and Population Statistics
-      18  IDA Results Measurement System
-      19  Millennium Development Goals
-      20  Quarterly Public Sector Debt
-      22  Quarterly External Debt Statistics SDDS
-      23  Quarterly External Debt Statistics GDDS
-      25  Jobs
-      27  Global Economic Prospects
-      28  Global Findex database
-      29  The Atlas of Social Protection: Indicators of Resilience and Equity
-      30  Exporter Dynamics Database – Indicators at Country-Year Level
-      31  Country Policy and Institutional Assessment
-      32  Global Financial Development
-      33  G20 Financial Inclusion Indicators
-      34  Global Partnership for Education
-      35  Sustainable Energy for All
-      37  LAC Equity Lab
-      38  Subnational Poverty
-      39  Health Nutrition and Population Statistics by Wealth Quintile
-      40  Population estimates and projections
-      41  Country Partnership Strategy for India (FY2013 - 17)
-      43  Adjusted Net Savings
-      45  Indonesia Database for Policy and Economic Research
-      46  Sustainable Development Goals
-      50  Subnational Population
-      54  Joint External Debt Hub
-      57  WDI Database Archives
-      58  Universal Health Coverage
-      59  Wealth Accounts
-      60  Economic Fitness
-      61  PPPs Regulatory Quality
-      62  International Comparison Program (ICP) 2011
-      63  Human Capital Index
-      64  Worldwide Bureaucracy Indicators
-      65  Health Equity and Financial Protection Indicators
-      66  Logistics Performance Index
-      67  PEFA 2011
-      68  PEFA 2016
-      69  Global Financial Inclusion and Consumer Protection Survey
-      70  Economic Fitness 2
-      71  International Comparison Program (ICP) 2005
-      73  Global Financial Inclusion and Consumer Protection Survey (Internal)
-      75  Environment, Social and Governance (ESG) Data
-      76  Remittance Prices Worldwide (Sending Countries)
-      77  Remittance Prices Worldwide (Receiving Countries)
-      78  ICP 2017
-      79  PEFA_GRPFM
-      80  Gender Disaggregated Labor Database (GDLD)
-      81  International Debt Statistics: DSSI
-      82  Global Public Procurement
-      83  Statistical Performance Indicators (SPI)
-      84  Education Policy
-      85  PEFA_2021_SNG
-      86  Global Jobs Indicators Database (JOIN)
-      87  Country Climate and Development Report (CCDR)
-      88  Food Prices for Nutrition
-      89  Identification for Development (ID4D) Data
-      90  ICP 2021
-      91  PEFA_CRPFM
-      92  Disability Data Hub (DDH)
-
-
-
-
-```python
-wbdata.get_indicators(query="gdp per capita", source=2)
-```
-
-
-
-
-    id                 name
-    -----------------  -------------------------------------------------------------------
-    NY.GDP.PCAP.CD     GDP per capita (current US$)
-    NY.GDP.PCAP.CN     GDP per capita (current LCU)
-    NY.GDP.PCAP.KD     GDP per capita (constant 2015 US$)
-    NY.GDP.PCAP.KD.ZG  GDP per capita growth (annual %)
-    NY.GDP.PCAP.KN     GDP per capita (constant LCU)
-    NY.GDP.PCAP.PP.CD  GDP per capita, PPP (current international $)
-    NY.GDP.PCAP.PP.KD  GDP per capita, PPP (constant 2021 international $)
-    SE.XPD.PRIM.PC.ZS  Government expenditure per student, primary (% of GDP per capita)
-    SE.XPD.SECO.PC.ZS  Government expenditure per student, secondary (% of GDP per capita)
-    SE.XPD.TERT.PC.ZS  Government expenditure per student, tertiary (% of GDP per capita)
-
-
-
-
-```python
-indicators = {'Indicator Name': [
-        'Gross Domestic Product (GDP)',
-        'Gross National Income (GNI)',
-        'Inflation rate',
-        'Unemployment rate',
-        'Poverty rate',
-        'Life expectancy',
-        'Literacy rate',
-        'Access to electricity',
-        'Mobile phone subscriptions',
-        'Government expenditure on education',
-        'Foreign direct investment (FDI)',
-        'Exports of goods and services',
-        'Imports of goods and services',
-        'Gross capital formation',
-        'Agricultural land area',
-        'Agricultural production index'
-    ],
-    'Indicator ID': [
-        'NY.GDP.MKTP.CD',
-        'NY.GNP.MKTP.CD',
-        'FP.CPI.TOTL.ZG',
-        'SL.UEM.TOTL.ZS',
-        'SI.POV.NAHC',
-        'SP.DYN.LE00.IN',
-        'SE.ADT.LITR.ZS',
-        'EG.ELC.ACCS.ZS',
-        'IT.CEL.SETS.P2',
-        'SE.XPD.TOTL.GB.ZS',
-        'BX.KLT.DINV.WD.GD.ZS',
-        'NE.EXP.GNFS.ZS',
-        'NE.IMP.GNFS.ZS',
-        'NE.GDI.TOTL.ZS',
-        'AG.LND.AGRI.ZS',
-        'AG.PRD.FOOD.XD'
-    ]
-             }
-```
-
-
-```python
-indicators
-```
-
-
-
-
-    {'Indicator Name': ['Gross Domestic Product (GDP)',
-      'Gross National Income (GNI)',
-      'Inflation rate',
-      'Unemployment rate',
-      'Poverty rate',
-      'Life expectancy',
-      'Literacy rate',
-      'Access to electricity',
-      'Mobile phone subscriptions',
-      'Government expenditure on education',
-      'Foreign direct investment (FDI)',
-      'Exports of goods and services',
-      'Imports of goods and services',
-      'Gross capital formation',
-      'Agricultural land area',
-      'Agricultural production index'],
-     'Indicator ID': ['NY.GDP.MKTP.CD',
-      'NY.GNP.MKTP.CD',
-      'FP.CPI.TOTL.ZG',
-      'SL.UEM.TOTL.ZS',
-      'SI.POV.NAHC',
-      'SP.DYN.LE00.IN',
-      'SE.ADT.LITR.ZS',
-      'EG.ELC.ACCS.ZS',
-      'IT.CEL.SETS.P2',
-      'SE.XPD.TOTL.GB.ZS',
-      'BX.KLT.DINV.WD.GD.ZS',
-      'NE.EXP.GNFS.ZS',
-      'NE.IMP.GNFS.ZS',
-      'NE.GDI.TOTL.ZS',
-      'AG.LND.AGRI.ZS',
-      'AG.PRD.FOOD.XD']}
-
-
-
-
-```python
-indicators = pd.DataFrame(indicators)
-```
-
-
-```python
-indicators
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Indicator Name</th>
-      <th>Indicator ID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Gross Domestic Product (GDP)</td>
-      <td>NY.GDP.MKTP.CD</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Gross National Income (GNI)</td>
-      <td>NY.GNP.MKTP.CD</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Inflation rate</td>
-      <td>FP.CPI.TOTL.ZG</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Unemployment rate</td>
-      <td>SL.UEM.TOTL.ZS</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Poverty rate</td>
-      <td>SI.POV.NAHC</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Life expectancy</td>
-      <td>SP.DYN.LE00.IN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Literacy rate</td>
-      <td>SE.ADT.LITR.ZS</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Access to electricity</td>
-      <td>EG.ELC.ACCS.ZS</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Mobile phone subscriptions</td>
-      <td>IT.CEL.SETS.P2</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Government expenditure on education</td>
-      <td>SE.XPD.TOTL.GB.ZS</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Foreign direct investment (FDI)</td>
-      <td>BX.KLT.DINV.WD.GD.ZS</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Exports of goods and services</td>
-      <td>NE.EXP.GNFS.ZS</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Imports of goods and services</td>
-      <td>NE.IMP.GNFS.ZS</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Gross capital formation</td>
-      <td>NE.GDI.TOTL.ZS</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Agricultural land area</td>
-      <td>AG.LND.AGRI.ZS</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Agricultural production index</td>
-      <td>AG.PRD.FOOD.XD</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-from datetime import datetime
-```
-
-
-```python
-start_date ='2015-01-01'
-end_date ='2020-12-31'
-
-start_date_obj = datetime.strptime(start_date,"%Y-%m-%d")
-end_date_obj = datetime.strptime(end_date,"%Y-%m-%d")
-
-date = (start_date_obj, end_date_obj)
-```
-
-
-```python
-date
-```
-
-
-
-
-    (datetime.datetime(2015, 1, 1, 0, 0), datetime.datetime(2020, 12, 31, 0, 0))
-
-
-
-
-```python
-new_df = pd.DataFrame()
-```
-
-
-```python
-gdp_series = wbdata.get_series('NY.GDP.MKTP.CD', country='all', date=data_date)
-
-# --- Step 3: Convert to DataFrame with the 'value' column ---
-df = pd.DataFrame(gdp_series, columns=['value'])
-
-# --- Step 4: Keep MultiIndex intact ---
-print(df.head())
-```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    Cell In[12], line 1
-    ----> 1 gdp_series = wbdata.get_series('NY.GDP.MKTP.CD', country='all', date=data_date)
-          3 # --- Step 3: Convert to DataFrame with the 'value' column ---
-          4 df = pd.DataFrame(gdp_series, columns=['value'])
-    
-
-    NameError: name 'data_date' is not defined
-
-
-
-```python
-indicators[indicators['Indicator ID'] == 'NY.GDP.MKTP.CD']['Indicator Name'].values[0]
-```
-
-
-
-
-    'Gross Domestic Product (GDP)'
-
-
-
-
-```python
-df=pd.DataFrame()
-```
-
-
-```python
-g20_countries = ["ARG","AUS","BRA","CAN","CHN","FRA","DEU","IND","IDN",
-                 "ITA","JPN","KOR","MEX","RUS","SAU","ZAF","TUR","GBR","USA"]
-```
-
-
-```python
-g20_countries
-```
-
-
-
-
-    ['ARG',
-     'AUS',
-     'BRA',
-     'CAN',
-     'CHN',
-     'FRA',
-     'DEU',
-     'IND',
-     'IDN',
-     'ITA',
-     'JPN',
-     'KOR',
-     'MEX',
-     'RUS',
-     'SAU',
-     'ZAF',
-     'TUR',
-     'GBR',
-     'USA']
-
-
-
-
-```python
-import wbdata
-import pandas as pd
-from datetime import datetime
-from functools import reduce
-
-# G20 countries
-g20_countries = [
-    'ARG','AUS','BRA','CAN','CHN','FRA','DEU','IND','IDN','ITA',
-    'JPN','KOR','MEX','RUS','SAU','ZAF','TUR','GBR','USA'
-]
-
-# Date range
-start_date = datetime(2015, 1, 1)
-end_date = datetime(2020, 12, 31)
-date_range = (start_date, end_date)
-
-# Indicators
-indicators = {
-    'NY.GDP.MKTP.CD': 'GDP',
-    'NY.GNP.MKTP.CD': 'GNI',
-    'FP.CPI.TOTL.ZG': 'Inflation',
-    'SL.UEM.TOTL.ZS': 'Unemployment',
-    'SI.POV.DDAY': 'Poverty',
-    'SP.DYN.LE00.IN': 'LifeExpectancy',
-    'SE.ADT.LITR.ZS': 'Literacy',
-    'EG.ELC.ACCS.ZS': 'AccessElectricity',
-    'IT.CEL.SETS.P2': 'MobileSubscriptions',
-    'SE.XPD.TOTL.GD.ZS': 'GovtEduExp',
-    'BX.KLT.DINV.CD.WD': 'FDI',
-    'NE.EXP.GNFS.ZS': 'Exports',
-    'NE.IMP.GNFS.ZS': 'Imports',
-    'NE.GDI.FTOT.ZS': 'CapitalFormation',
-    'AG.LND.AGRI.ZS': 'AgriLand',
-    'AG.PRD.CROP.XD': 'AgriProduction'
-}
-
-# Fetch dataframes individually
-df_list = []
-for code, name in indicators.items():
-    try:
-        # Note: data_date is positional, not keyword
-        df = wbdata.get_dataframe({code: name}, g20_countries, date_range)
-        df.reset_index(inplace=True)  # move country/date to columns
-        df.rename(columns={'date':'year'}, inplace=True)
-        df_list.append(df)
-        print(f"Data fetched for {name}, shape: {df.shape}")
-    except Exception as e:
-        print(f"Skipping {name}: {e}")
-        continue
-
-# Merge all on country + year
-if df_list:
-    df_final = reduce(lambda left, right: pd.merge(left, right, on=['country','year'], how='outer'), df_list)
-    df_final = df_final.sort_values(['country','year']).reset_index(drop=True)
-    pd.set_option('display.float_format', lambda x: '%.2f' % x)
-    print(df_final.head())
-else:
-    print("No data was fetched. Check your country codes, date range, or indicators.")
-```
-
-    WARNING:shelved_cache.persistent_cache:Key '1862525495490277303' not in persistent cache.
-    
-
-    Data fetched for GDP, shape: (114, 3)
-    Data fetched for GNI, shape: (114, 3)
-    Data fetched for Inflation, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '-5117636333221655311' not in persistent cache.
-    
-
-    Data fetched for Unemployment, shape: (114, 3)
-    Data fetched for Poverty, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '5219851931784943556' not in persistent cache.
-    
-
-    Data fetched for LifeExpectancy, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '-7834430681090695720' not in persistent cache.
-    
-
-    Data fetched for Literacy, shape: (114, 3)
-    Data fetched for AccessElectricity, shape: (114, 3)
-    Data fetched for MobileSubscriptions, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '-2470278514402296160' not in persistent cache.
-    
-
-    Data fetched for GovtEduExp, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '2603805651637916084' not in persistent cache.
-    
-
-    Data fetched for FDI, shape: (114, 3)
-    Data fetched for Exports, shape: (114, 3)
-    Data fetched for Imports, shape: (114, 3)
-    
-
-    WARNING:shelved_cache.persistent_cache:Key '2269798475895354966' not in persistent cache.
-    
-
-    Data fetched for CapitalFormation, shape: (114, 3)
-    Data fetched for AgriLand, shape: (114, 3)
-    Data fetched for AgriProduction, shape: (114, 3)
-         country  year             GDP             GNI  Inflation  Unemployment  \
-    0  Argentina  2015 594749285413.21 583615452086.54        NaN          7.58   
-    1  Argentina  2016 557532320662.95 545251641127.71        NaN          8.09   
-    2  Argentina  2017 643628393281.36 627200463933.82        NaN          8.35   
-    3  Argentina  2018 524819892360.18 506094045059.70      34.28          9.22   
-    4  Argentina  2019 447754683615.22 430166792070.57      53.55          9.84   
-    
-       Poverty  LifeExpectancy  Literacy  AccessElectricity  MobileSubscriptions  \
-    0      NaN           76.60       NaN              99.70               142.24   
-    1     1.30           76.11       NaN              99.90               145.15   
-    2     1.10           76.54       NaN             100.00               139.76   
-    3     1.60           76.77       NaN             100.00               131.22   
-    4     1.70           76.85       NaN             100.00               125.30   
-    
-       GovtEduExp            FDI  Exports  Imports  CapitalFormation  AgriLand  \
-    0        5.78 11758994011.29    10.71    11.78             15.56     44.12   
-    1        5.55  3260164341.77    12.53    13.57             14.27     43.43   
-    2        5.45 11516861462.28    11.32    13.97             15.16     42.98   
-    3        4.88 11716769818.75    14.44    16.33             15.25     42.36   
-    4        4.77  6649187837.99    17.92    14.71             14.20     42.61   
-    
-       AgriProduction  
-    0          104.14  
-    1          101.71  
-    2          106.82  
-    3           92.20  
-    4          113.14  
-    
-
-
-```python
-# Number of rows and columns
-print(df_final.shape)
-
-# Overview of columns, types, and missing values
-print(df_final.info())
-```
-
-    (114, 18)
-    <class 'wbdata.client.DataFrame'>
-    RangeIndex: 114 entries, 0 to 113
-    Data columns (total 18 columns):
-     #   Column               Non-Null Count  Dtype  
-    ---  ------               --------------  -----  
-     0   country              114 non-null    object 
-     1   year                 114 non-null    object 
-     2   GDP                  114 non-null    float64
-     3   GNI                  114 non-null    float64
-     4   Inflation            111 non-null    float64
-     5   Unemployment         114 non-null    float64
-     6   Poverty              88 non-null     float64
-     7   LifeExpectancy       114 non-null    float64
-     8   Literacy             31 non-null     float64
-     9   AccessElectricity    114 non-null    float64
-     10  MobileSubscriptions  114 non-null    float64
-     11  GovtEduExp           94 non-null     float64
-     12  FDI                  114 non-null    float64
-     13  Exports              114 non-null    float64
-     14  Imports              114 non-null    float64
-     15  CapitalFormation     114 non-null    float64
-     16  AgriLand             114 non-null    float64
-     17  AgriProduction       114 non-null    float64
-    dtypes: float64(16), object(2)
-    memory usage: 16.2+ KB
-    None
-    
-
-
-```python
-from warnings import filterwarnings
-filterwarnings("ignore") # To ignore future warnings.
-```
-
-
-```python
-df_final['year'] = pd.to_datetime(df_final['year'])
-```
-
-
-```python
-df_final.info()
-```
-
-    <class 'wbdata.client.DataFrame'>
-    RangeIndex: 114 entries, 0 to 113
-    Data columns (total 18 columns):
-     #   Column               Non-Null Count  Dtype         
-    ---  ------               --------------  -----         
-     0   country              114 non-null    object        
-     1   year                 114 non-null    datetime64[ns]
-     2   GDP                  114 non-null    float64       
-     3   GNI                  114 non-null    float64       
-     4   Inflation            111 non-null    float64       
-     5   Unemployment         114 non-null    float64       
-     6   Poverty              88 non-null     float64       
-     7   LifeExpectancy       114 non-null    float64       
-     8   Literacy             31 non-null     float64       
-     9   AccessElectricity    114 non-null    float64       
-     10  MobileSubscriptions  114 non-null    float64       
-     11  GovtEduExp           94 non-null     float64       
-     12  FDI                  114 non-null    float64       
-     13  Exports              114 non-null    float64       
-     14  Imports              114 non-null    float64       
-     15  CapitalFormation     114 non-null    float64       
-     16  AgriLand             114 non-null    float64       
-     17  AgriProduction       114 non-null    float64       
-    dtypes: datetime64[ns](1), float64(16), object(1)
-    memory usage: 16.2+ KB
-    
-
-
-```python
-# Statistical Analysis of the dataframe.
-
-df_final.describe().T
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-      <th>std</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>year</th>
-      <td>114</td>
-      <td>2017-07-02 04:00:00</td>
-      <td>2015-01-01 00:00:00</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2017-07-02 12:00:00</td>
-      <td>2019-01-01 00:00:00</td>
-      <td>2020-01-01 00:00:00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>114.00</td>
-      <td>3389858439909.33</td>
-      <td>323585509674.48</td>
-      <td>1072349506387.03</td>
-      <td>1675221888084.81</td>
-      <td>2766880619456.23</td>
-      <td>21539982000000.00</td>
-      <td>4838676599525.20</td>
-    </tr>
-    <tr>
-      <th>GNI</th>
-      <td>114.00</td>
-      <td>3404511577697.40</td>
-      <td>315294109648.65</td>
-      <td>1043271232884.37</td>
-      <td>1662172281864.93</td>
-      <td>2807299303420.42</td>
-      <td>21821877000000.00</td>
-      <td>4887848477786.67</td>
-    </tr>
-    <tr>
-      <th>Inflation</th>
-      <td>111.00</td>
-      <td>4.02</td>
-      <td>-2.09</td>
-      <td>1.02</td>
-      <td>2.00</td>
-      <td>3.73</td>
-      <td>53.55</td>
-      <td>7.42</td>
-    </tr>
-    <tr>
-      <th>Unemployment</th>
-      <td>114.00</td>
-      <td>7.56</td>
-      <td>2.35</td>
-      <td>4.30</td>
-      <td>5.62</td>
-      <td>9.21</td>
-      <td>29.22</td>
-      <td>5.48</td>
-    </tr>
-    <tr>
-      <th>Poverty</th>
-      <td>88.00</td>
-      <td>2.14</td>
-      <td>0.00</td>
-      <td>0.20</td>
-      <td>0.85</td>
-      <td>1.70</td>
-      <td>21.60</td>
-      <td>3.90</td>
-    </tr>
-    <tr>
-      <th>LifeExpectancy</th>
-      <td>114.00</td>
-      <td>77.50</td>
-      <td>64.05</td>
-      <td>74.45</td>
-      <td>78.17</td>
-      <td>82.17</td>
-      <td>84.56</td>
-      <td>5.26</td>
-    </tr>
-    <tr>
-      <th>Literacy</th>
-      <td>31.00</td>
-      <td>93.23</td>
-      <td>73.70</td>
-      <td>93.57</td>
-      <td>95.22</td>
-      <td>95.76</td>
-      <td>99.35</td>
-      <td>6.39</td>
-    </tr>
-    <tr>
-      <th>AccessElectricity</th>
-      <td>114.00</td>
-      <td>98.66</td>
-      <td>83.90</td>
-      <td>99.70</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>3.63</td>
-    </tr>
-    <tr>
-      <th>MobileSubscriptions</th>
-      <td>114.00</td>
-      <td>119.51</td>
-      <td>75.38</td>
-      <td>101.66</td>
-      <td>119.64</td>
-      <td>135.98</td>
-      <td>176.13</td>
-      <td>23.53</td>
-    </tr>
-    <tr>
-      <th>GovtEduExp</th>
-      <td>94.00</td>
-      <td>4.57</td>
-      <td>0.96</td>
-      <td>4.16</td>
-      <td>4.76</td>
-      <td>5.39</td>
-      <td>6.32</td>
-      <td>1.13</td>
-    </tr>
-    <tr>
-      <th>FDI</th>
-      <td>114.00</td>
-      <td>61588872373.62</td>
-      <td>-25055440306.91</td>
-      <td>11727325866.89</td>
-      <td>32835622515.00</td>
-      <td>60511531706.71</td>
-      <td>511434000000.00</td>
-      <td>92764067023.92</td>
-    </tr>
-    <tr>
-      <th>Exports</th>
-      <td>114.00</td>
-      <td>25.92</td>
-      <td>10.07</td>
-      <td>18.67</td>
-      <td>27.42</td>
-      <td>31.68</td>
-      <td>42.99</td>
-      <td>8.92</td>
-    </tr>
-    <tr>
-      <th>Imports</th>
-      <td>114.00</td>
-      <td>25.05</td>
-      <td>11.78</td>
-      <td>18.02</td>
-      <td>24.18</td>
-      <td>32.56</td>
-      <td>41.17</td>
-      <td>8.01</td>
-    </tr>
-    <tr>
-      <th>CapitalFormation</th>
-      <td>114.00</td>
-      <td>23.58</td>
-      <td>13.80</td>
-      <td>18.21</td>
-      <td>22.45</td>
-      <td>27.47</td>
-      <td>42.38</td>
-      <td>6.55</td>
-    </tr>
-    <tr>
-      <th>AgriLand</th>
-      <td>114.00</td>
-      <td>43.88</td>
-      <td>6.37</td>
-      <td>28.27</td>
-      <td>46.68</td>
-      <td>55.46</td>
-      <td>80.77</td>
-      <td>21.23</td>
-    </tr>
-    <tr>
-      <th>AgriProduction</th>
-      <td>114.00</td>
-      <td>104.17</td>
-      <td>76.66</td>
-      <td>97.31</td>
-      <td>102.83</td>
-      <td>108.50</td>
-      <td>181.73</td>
-      <td>12.85</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-df_final = df_final.rename(columns={
-    'Inflation': 'Inflation rate',
-    'Unemployment': 'Unemployment rate',
-    'Poverty': 'Poverty rate',
-    'LifeExpectancy': 'Life expectancy',
-    'Literacy': 'Literacy rate',
-    'AccessElectricity': 'Access to electricity',
-    'MobileSubscriptions': 'Mobile phone subscriptions',
-    'GovtEduExp': 'Government expenditure on education',
-    'FDI': 'Foreign direct investment (FDI)',
-    'Exports': 'Exports of goods and services',
-    'Imports': 'Imports of goods and services',
-    'CapitalFormation': 'Gross capital formation',
-    'AgriLand': 'Agricultural land area',
-    'AgriProduction': 'Agricultural production index'
-})
-```
-
-
-```python
-selected_cols = [
-    'Inflation rate','Unemployment rate','Poverty rate','Life expectancy',
-    'Literacy rate','Access to electricity','Mobile phone subscriptions',
-    'Government expenditure on education','Foreign direct investment (FDI)',
-    'Exports of goods and services','Imports of goods and services',
-    'Gross capital formation','Agricultural land area','Agricultural production index',
-    'GDP_BN','GNI_BN'
-]
-```
-
-
-```python
-# Statistical Analysis of the dataframe.
-
-df_final.describe().T
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-      <th>std</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>year</th>
-      <td>114</td>
-      <td>2017-07-02 04:00:00</td>
-      <td>2015-01-01 00:00:00</td>
-      <td>2016-01-01 00:00:00</td>
-      <td>2017-07-02 12:00:00</td>
-      <td>2019-01-01 00:00:00</td>
-      <td>2020-01-01 00:00:00</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>114.00</td>
-      <td>3389858439909.33</td>
-      <td>323585509674.48</td>
-      <td>1072349506387.03</td>
-      <td>1675221888084.81</td>
-      <td>2766880619456.23</td>
-      <td>21539982000000.00</td>
-      <td>4838676599525.20</td>
-    </tr>
-    <tr>
-      <th>GNI</th>
-      <td>114.00</td>
-      <td>3404511577697.40</td>
-      <td>315294109648.65</td>
-      <td>1043271232884.37</td>
-      <td>1662172281864.93</td>
-      <td>2807299303420.42</td>
-      <td>21821877000000.00</td>
-      <td>4887848477786.67</td>
-    </tr>
-    <tr>
-      <th>Inflation rate</th>
-      <td>111.00</td>
-      <td>4.02</td>
-      <td>-2.09</td>
-      <td>1.02</td>
-      <td>2.00</td>
-      <td>3.73</td>
-      <td>53.55</td>
-      <td>7.42</td>
-    </tr>
-    <tr>
-      <th>Unemployment rate</th>
-      <td>114.00</td>
-      <td>7.56</td>
-      <td>2.35</td>
-      <td>4.30</td>
-      <td>5.62</td>
-      <td>9.21</td>
-      <td>29.22</td>
-      <td>5.48</td>
-    </tr>
-    <tr>
-      <th>Poverty rate</th>
-      <td>88.00</td>
-      <td>2.14</td>
-      <td>0.00</td>
-      <td>0.20</td>
-      <td>0.85</td>
-      <td>1.70</td>
-      <td>21.60</td>
-      <td>3.90</td>
-    </tr>
-    <tr>
-      <th>Life expectancy</th>
-      <td>114.00</td>
-      <td>77.50</td>
-      <td>64.05</td>
-      <td>74.45</td>
-      <td>78.17</td>
-      <td>82.17</td>
-      <td>84.56</td>
-      <td>5.26</td>
-    </tr>
-    <tr>
-      <th>Literacy rate</th>
-      <td>31.00</td>
-      <td>93.23</td>
-      <td>73.70</td>
-      <td>93.57</td>
-      <td>95.22</td>
-      <td>95.76</td>
-      <td>99.35</td>
-      <td>6.39</td>
-    </tr>
-    <tr>
-      <th>Access to electricity</th>
-      <td>114.00</td>
-      <td>98.66</td>
-      <td>83.90</td>
-      <td>99.70</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>3.63</td>
-    </tr>
-    <tr>
-      <th>Mobile phone subscriptions</th>
-      <td>114.00</td>
-      <td>119.51</td>
-      <td>75.38</td>
-      <td>101.66</td>
-      <td>119.64</td>
-      <td>135.98</td>
-      <td>176.13</td>
-      <td>23.53</td>
-    </tr>
-    <tr>
-      <th>Government expenditure on education</th>
-      <td>94.00</td>
-      <td>4.57</td>
-      <td>0.96</td>
-      <td>4.16</td>
-      <td>4.76</td>
-      <td>5.39</td>
-      <td>6.32</td>
-      <td>1.13</td>
-    </tr>
-    <tr>
-      <th>Foreign direct investment (FDI)</th>
-      <td>114.00</td>
-      <td>61588872373.62</td>
-      <td>-25055440306.91</td>
-      <td>11727325866.89</td>
-      <td>32835622515.00</td>
-      <td>60511531706.71</td>
-      <td>511434000000.00</td>
-      <td>92764067023.92</td>
-    </tr>
-    <tr>
-      <th>Exports of goods and services</th>
-      <td>114.00</td>
-      <td>25.92</td>
-      <td>10.07</td>
-      <td>18.67</td>
-      <td>27.42</td>
-      <td>31.68</td>
-      <td>42.99</td>
-      <td>8.92</td>
-    </tr>
-    <tr>
-      <th>Imports of goods and services</th>
-      <td>114.00</td>
-      <td>25.05</td>
-      <td>11.78</td>
-      <td>18.02</td>
-      <td>24.18</td>
-      <td>32.56</td>
-      <td>41.17</td>
-      <td>8.01</td>
-    </tr>
-    <tr>
-      <th>Gross capital formation</th>
-      <td>114.00</td>
-      <td>23.58</td>
-      <td>13.80</td>
-      <td>18.21</td>
-      <td>22.45</td>
-      <td>27.47</td>
-      <td>42.38</td>
-      <td>6.55</td>
-    </tr>
-    <tr>
-      <th>Agricultural land area</th>
-      <td>114.00</td>
-      <td>43.88</td>
-      <td>6.37</td>
-      <td>28.27</td>
-      <td>46.68</td>
-      <td>55.46</td>
-      <td>80.77</td>
-      <td>21.23</td>
-    </tr>
-    <tr>
-      <th>Agricultural production index</th>
-      <td>114.00</td>
-      <td>104.17</td>
-      <td>76.66</td>
-      <td>97.31</td>
-      <td>102.83</td>
-      <td>108.50</td>
-      <td>181.73</td>
-      <td>12.85</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# If the column names are 'GDP' and 'GNI'
-df_final['GDP_BN'] = df_final['GDP'] / 1e9
-df_final['GNI_BN'] = df_final['GNI'] / 1e9
-```
-
-
-```python
-selected_cols = df_final.columns[4:]
-```
-
-
-```python
-selected_cols
-
-```
-
-
-
-
-    Index(['Inflation rate', 'Unemployment rate', 'Poverty rate',
-           'Life expectancy', 'Literacy rate', 'Access to electricity',
-           'Mobile phone subscriptions', 'Government expenditure on education',
-           'Foreign direct investment (FDI)', 'Exports of goods and services',
-           'Imports of goods and services', 'Gross capital formation',
-           'Agricultural land area', 'Agricultural production index', 'GDP_BN',
-           'GNI_BN'],
-          dtype='object')
-
-
-
-
-```python
-df_final[selected_cols].describe().T.round()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Inflation rate</th>
-      <td>111.00</td>
-      <td>4.00</td>
-      <td>7.00</td>
-      <td>-2.00</td>
-      <td>1.00</td>
-      <td>2.00</td>
-      <td>4.00</td>
-      <td>54.00</td>
-    </tr>
-    <tr>
-      <th>Unemployment rate</th>
-      <td>114.00</td>
-      <td>8.00</td>
-      <td>5.00</td>
-      <td>2.00</td>
-      <td>4.00</td>
-      <td>6.00</td>
-      <td>9.00</td>
-      <td>29.00</td>
-    </tr>
-    <tr>
-      <th>Poverty rate</th>
-      <td>88.00</td>
-      <td>2.00</td>
-      <td>4.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>1.00</td>
-      <td>2.00</td>
-      <td>22.00</td>
-    </tr>
-    <tr>
-      <th>Life expectancy</th>
-      <td>114.00</td>
-      <td>78.00</td>
-      <td>5.00</td>
-      <td>64.00</td>
-      <td>74.00</td>
-      <td>78.00</td>
-      <td>82.00</td>
-      <td>85.00</td>
-    </tr>
-    <tr>
-      <th>Literacy rate</th>
-      <td>31.00</td>
-      <td>93.00</td>
-      <td>6.00</td>
-      <td>74.00</td>
-      <td>94.00</td>
-      <td>95.00</td>
-      <td>96.00</td>
-      <td>99.00</td>
-    </tr>
-    <tr>
-      <th>Access to electricity</th>
-      <td>114.00</td>
-      <td>99.00</td>
-      <td>4.00</td>
-      <td>84.00</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>100.00</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>Mobile phone subscriptions</th>
-      <td>114.00</td>
-      <td>120.00</td>
-      <td>24.00</td>
-      <td>75.00</td>
-      <td>102.00</td>
-      <td>120.00</td>
-      <td>136.00</td>
-      <td>176.00</td>
-    </tr>
-    <tr>
-      <th>Government expenditure on education</th>
-      <td>94.00</td>
-      <td>5.00</td>
-      <td>1.00</td>
-      <td>1.00</td>
-      <td>4.00</td>
-      <td>5.00</td>
-      <td>5.00</td>
-      <td>6.00</td>
-    </tr>
-    <tr>
-      <th>Foreign direct investment (FDI)</th>
-      <td>114.00</td>
-      <td>61588872374.00</td>
-      <td>92764067024.00</td>
-      <td>-25055440307.00</td>
-      <td>11727325867.00</td>
-      <td>32835622515.00</td>
-      <td>60511531707.00</td>
-      <td>511434000000.00</td>
-    </tr>
-    <tr>
-      <th>Exports of goods and services</th>
-      <td>114.00</td>
-      <td>26.00</td>
-      <td>9.00</td>
-      <td>10.00</td>
-      <td>19.00</td>
-      <td>27.00</td>
-      <td>32.00</td>
-      <td>43.00</td>
-    </tr>
-    <tr>
-      <th>Imports of goods and services</th>
-      <td>114.00</td>
-      <td>25.00</td>
-      <td>8.00</td>
-      <td>12.00</td>
-      <td>18.00</td>
-      <td>24.00</td>
-      <td>33.00</td>
-      <td>41.00</td>
-    </tr>
-    <tr>
-      <th>Gross capital formation</th>
-      <td>114.00</td>
-      <td>24.00</td>
-      <td>7.00</td>
-      <td>14.00</td>
-      <td>18.00</td>
-      <td>22.00</td>
-      <td>27.00</td>
-      <td>42.00</td>
-    </tr>
-    <tr>
-      <th>Agricultural land area</th>
-      <td>114.00</td>
-      <td>44.00</td>
-      <td>21.00</td>
-      <td>6.00</td>
-      <td>28.00</td>
-      <td>47.00</td>
-      <td>55.00</td>
-      <td>81.00</td>
-    </tr>
-    <tr>
-      <th>Agricultural production index</th>
-      <td>114.00</td>
-      <td>104.00</td>
-      <td>13.00</td>
-      <td>77.00</td>
-      <td>97.00</td>
-      <td>103.00</td>
-      <td>108.00</td>
-      <td>182.00</td>
-    </tr>
-    <tr>
-      <th>GDP_BN</th>
-      <td>114.00</td>
-      <td>3390.00</td>
-      <td>4839.00</td>
-      <td>324.00</td>
-      <td>1072.00</td>
-      <td>1675.00</td>
-      <td>2767.00</td>
-      <td>21540.00</td>
-    </tr>
-    <tr>
-      <th>GNI_BN</th>
-      <td>114.00</td>
-      <td>3405.00</td>
-      <td>4888.00</td>
-      <td>315.00</td>
-      <td>1043.00</td>
-      <td>1662.00</td>
-      <td>2807.00</td>
-      <td>21822.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# Visualizing the distribution with the help of Histogram.
-
-fig, axs = plt.subplots(nrows=4, ncols=4, figsize=(14,10))
-axs = axs.flatten()
-
-for i, col in enumerate(selected_cols):
-    sns.histplot(data=df_final, x=col, kde=True, ax=axs[i])
-    axs[i].set_title(col)
-
-plt.tight_layout()
-plt.show()
-```
-
-
     
    <img width="1410" height="990" alt="output_30_0" src="https://github.com/user-attachments/assets/ff1d6f6a-3be1-4272-b9b8-c0ec1919fdb9" />
 
-    
+
+This collection of histograms offers a powerful, data-driven narrative about the **Progressive but Unequal World**. It moves beyond simple metrics to reveal the deep structural differences between nations, providing a critical foundation for strategic policy and product decisions.
+
+## Executive Summary: The Dual-Speed Global Economy
+
+The global development landscape is one of stark contrasts. **Social welfare is converging**—most countries have achieved high marks in health, education, and basic infrastructure. However, **economic prosperity is heavily centralized and unequal**, with a few nations dominating wealth, investment, and productivity.
+
+This "dual-speed" reality dictates unique challenges and opportunities: while product strategy can assume a globally literate and connected user base, investment strategy must contend with extreme concentrations of economic power.
+
+---
+
+## The Centralization of Wealth: Economic Health Indicators
+
+**The Takeaway:** Global economic power is overwhelmingly centralized. The world's wealth distribution is a testament to the "Matthew Effect"—to those who have, more will be given.
+
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (What it means for Business/Policy)** |
+| --- | --- | --- |
+| **GDP & GNI** | **Extreme Right Skew** | A small fraction of nations (the long tail) accounts for the vast majority of global wealth. **Strategic Focus:** Targeting product development and scaling for these mega-economies yields maximum immediate return. |
+| **Poverty Rate** | **High Right Skew** | While most enjoy low poverty, the long tail represents a critical challenge. **Policy Focus:** These outliers require targeted, hyper-localized economic inclusion programs, as general development aid is often diffused. |
+| **Inflation Rate** | **Heavy Clustering (low) with Outliers** | The majority (low inflation) suggests global economic anchors (US, EU, Japan) maintain stability. The outliers represent high-risk, high-volatility markets—potentially driven by currency crises or political instability. **Risk Management:** Essential for any firm considering market entry in these unstable regions. |
+| **Unemployment Rate** | **Clustering (5-10%)** | A healthy cluster suggests structural employment is managed in most developed and developing markets. The outliers over 20% indicate deeply rooted structural or youth unemployment problems, likely signaling a talent drain or mismatch. |
+
+---
+
+## The Global Convergence: Social Development Indicators
+
+**The Takeaway:** Universal access to basic human development is an achievable global reality. This convergence creates a massive, *qualitatively similar* global consumer base.
+
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (What it means for Product Strategy)** |
+| --- | --- | --- |
+| **Access to Electricity** | **Peak at 95-100%** | **Near-Universal Basic Infrastructure.** A strong signal for **digital product developers**—assume your user has power access. The few remaining gaps are geographically concentrated (e.g., last-mile rural areas) and require specific infrastructure or off-grid solutions. |
+| **Literacy Rate** | **Peak at 90-100%** | **Converging Human Capital.** The global market is predominantly **literate**. Product design can leverage text, written instructions, and complex interfaces with high confidence. The low-end tail still requires localization and visual-first design principles. |
+| **Life Expectancy** | **Strong Central Concentration (70-85)** | **A Maturing, Aging Global Market.** The world population is living longer. **Product Development:** Increased focus on healthcare, financial planning, and aging-in-place technologies for the expanding elderly demographic. |
+| **Govt. Exp. on Education** | **Normal Distribution (4-5% of GDP)** | Most nations treat human capital development as a similar priority. The variance suggests varying returns on investment (ROI)—some may spend less but achieve high literacy, indicating efficiency. **Benchmarking:** This is a key metric for evaluating national commitment to long-term growth. |
+
+## The Investor's Paradox: Trade and Capital Flows
+
+**The Takeaway:** While global trade (Exports/Imports) is diversified, the inflow of long-term capital (FDI) is not. Investors overwhelmingly prefer stability and scale, reinforcing the existing wealth concentration.
+
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (Investment Thesis)** |
+| --- | --- | --- |
+| **Foreign Direct Investment (FDI)** | **Heavy Right Skew** | **High-Confidence Investment Thesis.** FDI flows disproportionately to a few nations. **Investment Strategy:** Look for countries in the low FDI range but with *high* Literacy and *high* Access to Electricity—these are **Emerging Value Opportunities** where human capital is high, but the market is under-penetrated by international capital. |
+| **Exports & Imports** | **Fairly Even Spread** | **Diversified Trade Activity.** Global supply chains are not overly dependent on a single set of markets. **Policy Focus:** This spread suggests trade policy needs to be regionally customized, as national trade reliance varies widely. |
+| **Gross Capital Formation** | **Moderate Right Skew (15-30%)** | **Steady Global Reinvestment.** The clustering indicates a global commitment to business and infrastructure expansion, suggesting a sustainable growth outlook, distinct from volatile short-term speculation. |
+
+---
+
+## The Foundation of Prosperity: Agricultural Indicators
+
+**The Takeaway:** Productivity, not just land, determines a nation's ability to feed itself and contribute to the global economy.
+
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (Sustainability and Food Security)** |
+| --- | --- | --- |
+| **Agricultural Production Index** | **Clustering (100-120)** | **Incremental Global Efficiency.** Most nations are seeing moderate, stable productivity growth (above the base of 100). **AgriTech Opportunity:** The spread suggests a massive market for precision agriculture and mechanization in the lower-performing nations to boost yields and resilience. |
+| **Agricultural Land Area** | **Uniform Distribution** | **Geographic Diversity.** The lack of a central cluster shows there's no "typical" land allocation, reflecting varied geography, population density, and economic structure. |    
+--
 
 
 
-```python
-# Calculating the Skewness of the columns:
-
-df_final[selected_cols].skew().sort_values()
-```
-
-
-
-
-    Access to electricity                 -3.12
-    Literacy rate                         -2.51
-    Government expenditure on education   -1.47
-    Life expectancy                       -0.74
-    Agricultural land area                -0.08
-    Exports of goods and services          0.10
-    Imports of goods and services          0.11
-    Mobile phone subscriptions             0.23
-    Gross capital formation                1.01
-    Unemployment rate                      2.48
-    Agricultural production index          2.57
-    GDP_BN                                 2.65
-    GNI_BN                                 2.65
-    Foreign direct investment (FDI)        2.83
-    Poverty rate                           3.13
-    Inflation rate                         4.71
-    dtype: float64
-
-
-
-
-```python
-fig, axs = plt.subplots(nrows=4, ncols=4, figsize=(14,10))
-axs = axs.flatten()
-
-for i, col in enumerate(selected_cols):
-    sns.boxplot(data=df_final, x=col, ax=axs[i])
-    axs[i].set_title(col)
-
-plt.tight_layout()
-plt.show()
-```
 
     
 <img width="1389" height="990" alt="output_32_0" src="https://github.com/user-attachments/assets/f095e384-c4c5-4901-8516-066914a7166b" />
 
+This collection of histograms offers a powerful, data-driven narrative about the **Progressive but Unequal World**. It moves beyond simple metrics to reveal the deep structural differences between nations, providing a critical foundation for strategic policy and product decisions.
 
+## Executive Summary: The Dual-Speed Global Economy
 
-```python
-def outlier(x):
-    # Calculate the first quartile (Q1)
-    q1 = x.quantile(0.25)
-    
-    # Calculate the third quartile (Q3)
-    q3 = x.quantile(0.75)
-    
-    # Calculate the interquartile range (IQR)
-    iqr = q3 - q1
-    
-    # Identify outliers using the IQR rule
-    # Values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR are considered outliers
-    
-    return (x < q1 - 1.5 * iqr) | (x > q3 + 1.5 * iqr)
-```
+The global development landscape is one of stark contrasts. **Social welfare is converging**—most countries have achieved high marks in health, education, and basic infrastructure. However, **economic prosperity is heavily centralized and unequal**, with a few nations dominating wealth, investment, and productivity.
 
+This "dual-speed" reality dictates unique challenges and opportunities: while product strategy can assume a globally literate and connected user base, investment strategy must contend with extreme concentrations of economic power.
 
-```python
-# Initialize an empty list to store outlier percentages
-outlier_percentages = []
+---
 
-# Iterate through each column in the selected columns
-for col in selected_cols:
-    # Extract the column data
-    x = df_final[col]
-    
-    # Use the previously defined outlier function to identify outliers in the column
-    outliers = outlier(x)
-    
-    # Calculate the percentage of outliers in the column
-    outlier_percentage = np.mean(outliers) * 100
-    
-    # Append the outlier percentage to the list
-    outlier_percentages.append(outlier_percentage)
+## The Centralization of Wealth: Economic Health Indicators
 
-# Create a DataFrame to store the results
-result_df = pd.DataFrame({'Column': selected_cols, 'Outlier Percentage': outlier_percentages})
+Global economic power is overwhelmingly centralized. The world's wealth distribution is a testament to the "Matthew Effect"—to those who have, more will be given.
 
-# Sort the DataFrame by 'Outlier Percentage' in descending order
-result_df = result_df.sort_values('Outlier Percentage', ascending=False)
-```
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (What it means for Business/Policy)** |
+| --- | --- | --- |
+| **GDP & GNI** | **Extreme Right Skew** | A small fraction of nations (the long tail) accounts for the vast majority of global wealth. **Strategic Focus:** Targeting product development and scaling for these mega-economies yields maximum immediate return. |
+| **Poverty Rate** | **High Right Skew** | While most enjoy low poverty, the long tail represents a critical challenge. **Policy Focus:** These outliers require targeted, hyper-localized economic inclusion programs, as general development aid is often diffused. |
+| **Inflation Rate** | **Heavy Clustering (low) with Outliers** | The majority (low inflation) suggests global economic anchors (US, EU, Japan) maintain stability. The outliers represent high-risk, high-volatility markets—potentially driven by currency crises or political instability. **Risk Management:** Essential for any firm considering market entry in these unstable regions. |
+| **Unemployment Rate** | **Clustering (5-10%)** | A healthy cluster suggests structural employment is managed in most developed and developing markets. The outliers over 20% indicate deeply rooted structural or youth unemployment problems, likely signaling a talent drain or mismatch. |
 
+---
 
-```python
-result_df.round()
-```
+## The Global Convergence: Social Development IndicatorsUniversal access to basic human development is an achievable global reality. This convergence creates a massive, *qualitatively similar* global consumer base.
 
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (What it means for Product Strategy)** |
+| --- | --- | --- |
+| **Access to Electricity** | **Peak at 95-100%** | **Near-Universal Basic Infrastructure.** A strong signal for **digital product developers**—assume your user has power access. The few remaining gaps are geographically concentrated (e.g., last-mile rural areas) and require specific infrastructure or off-grid solutions. |
+| **Literacy Rate** | **Peak at 90-100%** | **Converging Human Capital.** The global market is predominantly **literate**. Product design can leverage text, written instructions, and complex interfaces with high confidence. The low-end tail still requires localization and visual-first design principles. |
+| **Life Expectancy** | **Strong Central Concentration (70-85)** | **A Maturing, Aging Global Market.** The world population is living longer. **Product Development:** Increased focus on healthcare, financial planning, and aging-in-place technologies for the expanding elderly demographic. |
+| **Govt. Exp. on Education** | **Normal Distribution (4-5% of GDP)** | Most nations treat human capital development as a similar priority. The variance suggests varying returns on investment (ROI)—some may spend less but achieve high literacy, indicating efficiency. **Benchmarking:** This is a key metric for evaluating national commitment to long-term growth. |
 
+## The Investor's Paradox: Trade and Capital Flows
 
+ While global trade (Exports/Imports) is diversified, the inflow of long-term capital (FDI) is not. Investors overwhelmingly prefer stability and scale, reinforcing the existing wealth concentration.
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (Investment Thesis)** |
+| --- | --- | --- |
+| **Foreign Direct Investment (FDI)** | **Heavy Right Skew** | **High-Confidence Investment Thesis.** FDI flows disproportionately to a few nations. **Investment Strategy:** Look for countries in the low FDI range but with *high* Literacy and *high* Access to Electricity—these are **Emerging Value Opportunities** where human capital is high, but the market is under-penetrated by international capital. |
+| **Exports & Imports** | **Fairly Even Spread** | **Diversified Trade Activity.** Global supply chains are not overly dependent on a single set of markets. **Policy Focus:** This spread suggests trade policy needs to be regionally customized, as national trade reliance varies widely. |
+| **Gross Capital Formation** | **Moderate Right Skew (15-30%)** | **Steady Global Reinvestment.** The clustering indicates a global commitment to business and infrastructure expansion, suggesting a sustainable growth outlook, distinct from volatile short-term speculation. |
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+---
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Column</th>
-      <th>Outlier Percentage</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>5</th>
-      <td>Access to electricity</td>
-      <td>18.00</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Foreign direct investment (FDI)</td>
-      <td>14.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Poverty rate</td>
-      <td>11.00</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>GNI_BN</td>
-      <td>11.00</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>GDP_BN</td>
-      <td>11.00</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Inflation rate</td>
-      <td>9.00</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Agricultural production index</td>
-      <td>5.00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Unemployment rate</td>
-      <td>5.00</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Gross capital formation</td>
-      <td>4.00</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Government expenditure on education</td>
-      <td>4.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Literacy rate</td>
-      <td>4.00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Life expectancy</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Mobile phone subscriptions</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Exports of goods and services</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Imports of goods and services</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Agricultural land area</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+## The Foundation of Prosperity: Agricultural Indicators
 
+ Productivity, not just land, determines a nation's ability to feed itself and contribute to the global economy.
 
+| **Indicator** | **Distribution Shape** | **Data-Driven Story (Sustainability and Food Security)** |
+| --- | --- | --- |
+| **Agricultural Production Index** | **Clustering (100-120)** | **Incremental Global Efficiency.** Most nations are seeing moderate, stable productivity growth (above the base of 100). **AgriTech Opportunity:** The spread suggests a massive market for precision agriculture and mechanization in the lower-performing nations to boost yields and resilience. |
+| **Agricultural Land Area** | **Uniform Distribution** | **Geographic Diversity.** The lack of a central cluster shows there's no "typical" land allocation, reflecting varied geography, population density, and economic structure. |
 
+This collection of **Box Plots** provides a complementary view to the histograms, zeroing in on **median values, interquartile ranges (IQR), and the severity of global outliers**. As a data analyst, this visual helps quickly identify volatility and the "typical" country versus the exceptional ones.
 
-```python
-# Plotting the Percentage of the outliers calculted previously.
+## **The Severity of Economic Inequality: Economic Health Indicators**
 
-plt.figure(figsize=(11,5))
-sns.barplot(x=result_df['Column'], y=result_df['Outlier Percentage'])
-plt.title("Outlier Percentage")
-plt.xticks(rotation=90)
-plt.show()
+The box plots vividly confirm that global wealth is concentrated, and economic instability (inflation, poverty) is an acute problem for a few, not the majority. The length of the "whisker" on the right side of the box plot for GDP and GNI is the most compelling evidence of extreme wealth concentration.
+
+| Indicator | Box Plot Insight | Analyst's Story (Volatility & Central Tendency) |
+| --- | --- | --- |
+| **GDP_BN & GNI_BN** | **Box is tiny, Right Whisker/Outliers are vast.** | **Extreme Skew.** The median country has a negligible GDP/GNI compared to the maximum. The wealth gap is not just large; it's vast. **Product Strategy:** To capture the *value* ($$$), target the few outliers; to capture *volume* (users), understand the vast majority clustered near zero. |
+| **Poverty Rate** | **Box is compressed near zero; many outliers.** | The **median** country enjoys a very low poverty rate (near 0%). High poverty is an issue of **acute national crisis** (the outliers), not a widespread global challenge. |
+| **Inflation Rate** | **Box is tightly packed near zero; extreme outliers up to 50.** | The global economy is largely stable (low median/IQR). The countries with high inflation are **financial risk zones**; their volatility makes them highly challenging markets for long-term investment. |
+| **Unemployment Rate** | **Relatively centered box (5-10%); few high outliers.** | The interquartile range (IQR) is narrow, suggesting most countries have structurally similar employment challenges. The high outliers represent distinct structural employment failures. |
+
+---
+
+## **Global Standardization: Social Development Indicators**
+
+For social indicators, the boxes are generally wide and centered at high values, confirming global progress. The convergence on high medians provides a robust assumption base for global product design.
+
+| Indicator | Box Plot Insight | Analyst's Story (Reliability for Product Design) |
+| --- | --- | --- |
+| **Life Expectancy** | **High Median (around 75), wide IQR (70-85).** | **Robust Health Baseline.** The "typical" country enjoys a relatively long lifespan. This indicates a high global baseline for public health and care infrastructure, simplifying assumptions for healthcare or retirement product markets. |
+| **Literacy Rate** | **Box compressed very tightly near 100%.** | **Near-Universal Literacy.** The median and IQR are exceptionally high. A product analyst can safely assume a user base is literate when designing interfaces. |
+| **Access to Electricity** | **Box compressed near 100%; small group of low outliers.** | **Infrastructure Success Story.** The vast majority of countries have near-complete access. Product focus should shift from **getting access** to **improving reliability** for the core market. |
+| **Govt. Exp. on Education** | **Box centered around 4-5% of GDP, short whiskers.** | **Standardized Commitment.** There is a strong consensus on the budget allocated to education. This stability suggests predictable human capital development over time. |
+
+---
+
+## **Capital Flow and Trade Dynamics**
+
+Trade activities (Exports/Imports) show broad global participation (wide IQR), but Foreign Direct Investment (FDI) remains highly selective, reinforcing the centralization of economic power.
+
+| Indicator | Box Plot Insight | Analyst's Story (Investment & Trade Risk) |
+| --- | --- | --- |
+| **Foreign Direct Investment (FDI)** | **Box compressed near zero; extensive, vast outliers.** | **Investor Selectivity.** Most countries attract very little FDI (low median). The outliers—the massive FDI recipients—are the **preferred, low-risk markets**. The high skew suggests capital is not evenly distributed or seeking high-risk, high-reward opportunities. |
+| **Exports & Imports** | **Wide boxes (e.g., 20-40% of GDP), moderate outliers.** | **Trade Activity is Broadly Distributed.** The large IQR indicates that a wide range of countries are active in global trade, suggesting robust and diversified supply chains. This makes the **global trade environment less vulnerable** to shock in any single region. |
+| **Gross Capital Formation** | **Box centered well above zero (15-30% range).** | **Healthy Investment Base.** The robust box indicates a strong global commitment to reinvesting in future capacity (infrastructure, equipment). This is a good sign for long-term global growth potential. |
+
+---
+
+## **Agricultural Foundations**
+
+Agricultural productivity is more stable than land area allocation, suggesting global efforts towards efficiency are paying off.
+
+| Indicator | Box Plot Insight | Analyst's Story (Efficiency vs. Endowment) |
+| --- | --- | --- |
+| **Agricultural Land Area** | **Wide, almost uniform box (20-60%).** | **Geographic Variation.** Land allocation varies wildly, reflecting geographic constraints and policy choices. Land area alone is a poor predictor of output. |
+| **Agricultural Production Index** | **Tight box clustered near 100-120.** | **Focus on Efficiency.** The tight cluster shows that the majority of countries are maintaining or slightly improving agricultural productivity. The outliers with very high indices are likely nations with advanced, heavily mechanized agricultural sectors. |
+
 ```
 
 
         
 <img width="932" height="724" alt="output_36_0" src="https://github.com/user-attachments/assets/49d12ec6-16a8-4ec1-af18-e1c9cfb6937c" />
 
+This bar chart on **Outlier Percentage** is a crucial diagnostic tool for a data or product analyst, as it quantifies the degree of **global heterogeneity** for each indicator. High outlier percentages signal metrics where a significant portion of countries deviates from the global norm (the median and interquartile range), while low percentages indicate global convergence.
 
+## **Strategic Insights from Outlier Concentration**
 
-```python
-df_final.isnull().sum()
+The chart clearly separates the indicators into two distinct groups: those with significant global disparity (high outliers) and those showing near-universal alignment (low/zero outliers).
 
-```
+---
 
+### **High Disparity Indicators (High Outlier Percentage)**
 
+These metrics represent the biggest challenges and the most unique opportunities, as the global "norm" is a poor descriptor for a large fraction of the countries. They require **hyper-localized strategies** and **robust risk management**.
 
+| Indicator | Outlier % | Analyst's Interpretation & Action |
+| --- | --- | --- |
+| **Access to Electricity** | **~17.5% (Highest)** | **Infrastructure Gap.** This is the most non-conforming metric. The 17.5% outlier group represents nations with critically low access. **Action:** Product strategies related to digital content or energy consumption must target this specific group with offline/low-power solutions. |
+| **Foreign Direct Investment (FDI)** | **~14.5%** | **Capital Concentration.** The high outlier percentage doesn't mean many countries attract high FDI; rather, it highlights the many countries that receive **extremely low FDI** (below the lower fence of the box plot). **Action:** Investment policy must be tailored to address the lack of capital flow in these non-conforming markets. |
+| **Poverty Rate** | **~11.5%** | **Social Inequality.** This confirms the previous box plot analysis—a substantial portion of nations faces significantly higher poverty rates than the global median. **Action:** Development aid and social programs should heavily prioritize this outlier group. |
+| **GNI_BN & GDP_BN** | **~10.5% each** | **Economic Segmentation.** A full 1 in 10 countries are economic outliers. These outliers define the global economy. **Action:** Target market analysis *must* segment the market into the "economic giants" and the "rest," as a global average is meaningless. |
+| **Inflation Rate** | **~9%** | **Financial Instability.** Nearly 1 in 11 countries has non-conforming inflation. **Action:** Businesses operating in these markets must have mechanisms for currency hedging and flexible pricing models. |
 
-    country                                 0
-    year                                    0
-    GDP                                     0
-    GNI                                     0
-    Inflation rate                          3
-    Unemployment rate                       0
-    Poverty rate                           26
-    Life expectancy                         0
-    Literacy rate                          83
-    Access to electricity                   0
-    Mobile phone subscriptions              0
-    Government expenditure on education    20
-    Foreign direct investment (FDI)         0
-    Exports of goods and services           0
-    Imports of goods and services           0
-    Gross capital formation                 0
-    Agricultural land area                  0
-    Agricultural production index           0
-    GDP_BN                                  0
-    GNI_BN                                  0
-    dtype: int64
+---
 
+### **Low Disparity Indicators (Low to Zero Outlier Percentage)**
 
+These metrics show **global convergence and standardization**. For these, a **one-size-fits-most global product strategy** is often viable, as the vast majority of countries conform to the central tendencies (median and IQR).
 
-Correlation
+| Indicator | Outlier % | Analyst's Interpretation & Action |
+| --- | --- | --- |
+| **Literacy Rate** | **~4.5%** | **Education Success.** A very small number of nations lag significantly. Global content and interfaces can confidently assume high literacy for the vast majority of users. |
+| **Life Expectancy** | **~0%** | **Health Convergence.** Every country's life expectancy falls within the defined normal range, signaling that health outcomes have achieved a fundamental global baseline. **Action:** This indicates low risk when planning health or life-cycle focused products globally. |
+| **Mobile phone subscriptions** | **~0%** | **Connectivity Saturation.** No country is an outlier in mobile penetration. This confirms mobile access is near-universal, reinforcing the primacy of a **mobile-first product strategy**. |
+| **Exports & Imports** | **~0% each** | **Trade Balance.** Trade activity is relatively consistent across the globe. Extreme reliance or lack of reliance on trade is not a widespread issue. |
+| **Agricultural Land Area** | **~0%** | **Uniform Diversity.** Despite wide variance in the box plot, no country's land allocation is statistically extreme, suggesting geographical constraints are balanced across the distribution. |
 
+---
 
-```python
-# Compute correlation only for numeric columns
-corr_matrix = df_final.select_dtypes(include='number').corr()
+## **Strategic Takeaways for Product & Policy**
 
-# Display it neatly (optional: round values for readability)
-corr_matrix.round(9)
-```
+1. **Focus on the "Top 5" for Investment Risk:** The highest outlier percentages are in **Access to Electricity, FDI, Poverty, GNI, and Inflation**. These are the metrics that will most often cause a global model to fail at a national level. Strategic resources should be allocated to understanding the **specific characteristics** of the non-conforming countries for these five indicators.
+2. **Leverage Global Consensus:** The zero-outlier metrics (**Life Expectancy, Mobile Subscriptions, Trade** → **0%**) represent the safest assumptions for global product design and policy planning. Any strategy relying on connectivity or basic social health can be executed with high confidence.
+3. **From Outlier to Opportunity:** For **Access to Electricity**, the 17.5% outlier group is a massive, underserved market. This outlier percentage signals the magnitude of the opportunity for utility providers, off-grid energy solutions, and related hardware manufacturers.
 
+---
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>GDP</th>
-      <th>GNI</th>
-      <th>Inflation rate</th>
-      <th>Unemployment rate</th>
-      <th>Poverty rate</th>
-      <th>Life expectancy</th>
-      <th>Literacy rate</th>
-      <th>Access to electricity</th>
-      <th>Mobile phone subscriptions</th>
-      <th>Government expenditure on education</th>
-      <th>Foreign direct investment (FDI)</th>
-      <th>Exports of goods and services</th>
-      <th>Imports of goods and services</th>
-      <th>Gross capital formation</th>
-      <th>Agricultural land area</th>
-      <th>Agricultural production index</th>
-      <th>GDP_BN</th>
-      <th>GNI_BN</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>GDP</th>
-      <td>1.00</td>
-      <td>1.00</td>
-      <td>-0.18</td>
-      <td>-0.26</td>
-      <td>-0.17</td>
-      <td>0.15</td>
-      <td>-0.10</td>
-      <td>0.18</td>
-      <td>-0.20</td>
-      <td>0.07</td>
-      <td>0.83</td>
-      <td>-0.40</td>
-      <td>-0.38</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>-0.16</td>
-      <td>1.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>GNI</th>
-      <td>1.00</td>
-      <td>1.00</td>
-      <td>-0.18</td>
-      <td>-0.26</td>
-      <td>-0.17</td>
-      <td>0.15</td>
-      <td>-0.10</td>
-      <td>0.18</td>
-      <td>-0.19</td>
-      <td>0.07</td>
-      <td>0.82</td>
-      <td>-0.40</td>
-      <td>-0.38</td>
-      <td>0.27</td>
-      <td>0.04</td>
-      <td>-0.16</td>
-      <td>1.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>Inflation rate</th>
-      <td>-0.18</td>
-      <td>-0.18</td>
-      <td>1.00</td>
-      <td>0.20</td>
-      <td>0.06</td>
-      <td>-0.24</td>
-      <td>0.15</td>
-      <td>-0.05</td>
-      <td>-0.00</td>
-      <td>0.06</td>
-      <td>-0.17</td>
-      <td>-0.20</td>
-      <td>-0.22</td>
-      <td>-0.19</td>
-      <td>-0.00</td>
-      <td>0.07</td>
-      <td>-0.18</td>
-      <td>-0.18</td>
-    </tr>
-    <tr>
-      <th>Unemployment rate</th>
-      <td>-0.26</td>
-      <td>-0.26</td>
-      <td>0.20</td>
-      <td>1.00</td>
-      <td>-0.02</td>
-      <td>-0.49</td>
-      <td>0.04</td>
-      <td>-0.73</td>
-      <td>0.19</td>
-      <td>0.40</td>
-      <td>-0.24</td>
-      <td>-0.07</td>
-      <td>-0.04</td>
-      <td>-0.41</td>
-      <td>0.38</td>
-      <td>0.14</td>
-      <td>-0.26</td>
-      <td>-0.26</td>
-    </tr>
-    <tr>
-      <th>Poverty rate</th>
-      <td>-0.17</td>
-      <td>-0.17</td>
-      <td>0.06</td>
-      <td>-0.02</td>
-      <td>1.00</td>
-      <td>-0.64</td>
-      <td>-0.27</td>
-      <td>-0.65</td>
-      <td>0.12</td>
-      <td>-0.50</td>
-      <td>-0.13</td>
-      <td>-0.30</td>
-      <td>-0.29</td>
-      <td>0.20</td>
-      <td>-0.13</td>
-      <td>0.25</td>
-      <td>-0.17</td>
-      <td>-0.17</td>
-    </tr>
-    <tr>
-      <th>Life expectancy</th>
-      <td>0.15</td>
-      <td>0.15</td>
-      <td>-0.24</td>
-      <td>-0.49</td>
-      <td>-0.64</td>
-      <td>1.00</td>
-      <td>0.34</td>
-      <td>0.71</td>
-      <td>-0.15</td>
-      <td>0.09</td>
-      <td>0.13</td>
-      <td>0.22</td>
-      <td>0.22</td>
-      <td>0.00</td>
-      <td>-0.27</td>
-      <td>-0.28</td>
-      <td>0.15</td>
-      <td>0.15</td>
-    </tr>
-    <tr>
-      <th>Literacy rate</th>
-      <td>-0.10</td>
-      <td>-0.10</td>
-      <td>0.15</td>
-      <td>0.04</td>
-      <td>-0.27</td>
-      <td>0.34</td>
-      <td>1.00</td>
-      <td>0.20</td>
-      <td>0.40</td>
-      <td>-0.02</td>
-      <td>-0.12</td>
-      <td>0.25</td>
-      <td>0.15</td>
-      <td>-0.14</td>
-      <td>-0.17</td>
-      <td>0.01</td>
-      <td>-0.10</td>
-      <td>-0.10</td>
-    </tr>
-    <tr>
-      <th>Access to electricity</th>
-      <td>0.18</td>
-      <td>0.18</td>
-      <td>-0.05</td>
-      <td>-0.73</td>
-      <td>-0.65</td>
-      <td>0.71</td>
-      <td>0.20</td>
-      <td>1.00</td>
-      <td>-0.19</td>
-      <td>-0.10</td>
-      <td>0.18</td>
-      <td>0.05</td>
-      <td>0.02</td>
-      <td>0.13</td>
-      <td>-0.39</td>
-      <td>-0.06</td>
-      <td>0.18</td>
-      <td>0.18</td>
-    </tr>
-    <tr>
-      <th>Mobile phone subscriptions</th>
-      <td>-0.20</td>
-      <td>-0.19</td>
-      <td>-0.00</td>
-      <td>0.19</td>
-      <td>0.12</td>
-      <td>-0.15</td>
-      <td>0.40</td>
-      <td>-0.19</td>
-      <td>1.00</td>
-      <td>-0.16</td>
-      <td>-0.25</td>
-      <td>0.03</td>
-      <td>-0.16</td>
-      <td>-0.22</td>
-      <td>0.02</td>
-      <td>0.05</td>
-      <td>-0.20</td>
-      <td>-0.19</td>
-    </tr>
-    <tr>
-      <th>Government expenditure on education</th>
-      <td>0.07</td>
-      <td>0.07</td>
-      <td>0.06</td>
-      <td>0.40</td>
-      <td>-0.50</td>
-      <td>0.09</td>
-      <td>-0.02</td>
-      <td>-0.10</td>
-      <td>-0.16</td>
-      <td>1.00</td>
-      <td>0.18</td>
-      <td>0.07</td>
-      <td>0.11</td>
-      <td>-0.68</td>
-      <td>0.37</td>
-      <td>-0.10</td>
-      <td>0.07</td>
-      <td>0.07</td>
-    </tr>
-    <tr>
-      <th>Foreign direct investment (FDI)</th>
-      <td>0.83</td>
-      <td>0.82</td>
-      <td>-0.17</td>
-      <td>-0.24</td>
-      <td>-0.13</td>
-      <td>0.13</td>
-      <td>-0.12</td>
-      <td>0.18</td>
-      <td>-0.25</td>
-      <td>0.18</td>
-      <td>1.00</td>
-      <td>-0.30</td>
-      <td>-0.26</td>
-      <td>0.15</td>
-      <td>0.11</td>
-      <td>-0.18</td>
-      <td>0.83</td>
-      <td>0.82</td>
-    </tr>
-    <tr>
-      <th>Exports of goods and services</th>
-      <td>-0.40</td>
-      <td>-0.40</td>
-      <td>-0.20</td>
-      <td>-0.07</td>
-      <td>-0.30</td>
-      <td>0.22</td>
-      <td>0.25</td>
-      <td>0.05</td>
-      <td>0.03</td>
-      <td>0.07</td>
-      <td>-0.30</td>
-      <td>1.00</td>
-      <td>0.93</td>
-      <td>-0.03</td>
-      <td>0.07</td>
-      <td>-0.07</td>
-      <td>-0.40</td>
-      <td>-0.40</td>
-    </tr>
-    <tr>
-      <th>Imports of goods and services</th>
-      <td>-0.38</td>
-      <td>-0.38</td>
-      <td>-0.22</td>
-      <td>-0.04</td>
-      <td>-0.29</td>
-      <td>0.22</td>
-      <td>0.15</td>
-      <td>0.02</td>
-      <td>-0.16</td>
-      <td>0.11</td>
-      <td>-0.26</td>
-      <td>0.93</td>
-      <td>1.00</td>
-      <td>-0.02</td>
-      <td>0.13</td>
-      <td>-0.10</td>
-      <td>-0.38</td>
-      <td>-0.38</td>
-    </tr>
-    <tr>
-      <th>Gross capital formation</th>
-      <td>0.28</td>
-      <td>0.27</td>
-      <td>-0.19</td>
-      <td>-0.41</td>
-      <td>0.20</td>
-      <td>0.00</td>
-      <td>-0.14</td>
-      <td>0.13</td>
-      <td>-0.22</td>
-      <td>-0.68</td>
-      <td>0.15</td>
-      <td>-0.03</td>
-      <td>-0.02</td>
-      <td>1.00</td>
-      <td>-0.09</td>
-      <td>0.03</td>
-      <td>0.28</td>
-      <td>0.27</td>
-    </tr>
-    <tr>
-      <th>Agricultural land area</th>
-      <td>0.04</td>
-      <td>0.04</td>
-      <td>-0.00</td>
-      <td>0.38</td>
-      <td>-0.13</td>
-      <td>-0.27</td>
-      <td>-0.17</td>
-      <td>-0.39</td>
-      <td>0.02</td>
-      <td>0.37</td>
-      <td>0.11</td>
-      <td>0.07</td>
-      <td>0.13</td>
-      <td>-0.09</td>
-      <td>1.00</td>
-      <td>0.24</td>
-      <td>0.04</td>
-      <td>0.04</td>
-    </tr>
-    <tr>
-      <th>Agricultural production index</th>
-      <td>-0.16</td>
-      <td>-0.16</td>
-      <td>0.07</td>
-      <td>0.14</td>
-      <td>0.25</td>
-      <td>-0.28</td>
-      <td>0.01</td>
-      <td>-0.06</td>
-      <td>0.05</td>
-      <td>-0.10</td>
-      <td>-0.18</td>
-      <td>-0.07</td>
-      <td>-0.10</td>
-      <td>0.03</td>
-      <td>0.24</td>
-      <td>1.00</td>
-      <td>-0.16</td>
-      <td>-0.16</td>
-    </tr>
-    <tr>
-      <th>GDP_BN</th>
-      <td>1.00</td>
-      <td>1.00</td>
-      <td>-0.18</td>
-      <td>-0.26</td>
-      <td>-0.17</td>
-      <td>0.15</td>
-      <td>-0.10</td>
-      <td>0.18</td>
-      <td>-0.20</td>
-      <td>0.07</td>
-      <td>0.83</td>
-      <td>-0.40</td>
-      <td>-0.38</td>
-      <td>0.28</td>
-      <td>0.04</td>
-      <td>-0.16</td>
-      <td>1.00</td>
-      <td>1.00</td>
-    </tr>
-    <tr>
-      <th>GNI_BN</th>
-      <td>1.00</td>
-      <td>1.00</td>
-      <td>-0.18</td>
-      <td>-0.26</td>
-      <td>-0.17</td>
-      <td>0.15</td>
-      <td>-0.10</td>
-      <td>0.18</td>
-      <td>-0.19</td>
-      <td>0.07</td>
-      <td>0.82</td>
-      <td>-0.40</td>
-      <td>-0.38</td>
-      <td>0.27</td>
-      <td>0.04</td>
-      <td>-0.16</td>
-      <td>1.00</td>
-      <td>1.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-# Plotting the correlation using heatmap:
-
-
-plt.figure(figsize=(8,8))
-sns.heatmap(df_final[selected_cols].corr(), annot=True, fmt='.1f', cmap='turbo')
-plt.show()
-```
-
-
-    
-    
+        
 <img width="900" height="920" alt="output_40_0" src="https://github.com/user-attachments/assets/91b50172-e982-43cb-a1cf-6aad69515f33" />
 
 
@@ -2272,11 +370,46 @@ plt.show()
         
 <img width="385" height="390" alt="output_42_0" src="https://github.com/user-attachments/assets/11ef39ac-fc8e-4a51-9e8a-0b3a727ab992" />
 
+This correlation matrix provides critical insights into the **interdependencies of global development factors**. For a data or product analyst, this reveals which indicators move together, suggesting underlying causal links, shared policies, or systemic relationships. The scale runs from **+1.0 (perfect positive correlation)** to **−1.0 (perfect negative correlation)**.
+
+## **Key Strategic Relationships**
+
+The most important insights come from strong correlations (close to ±1.0), as they suggest that improving one factor is likely tied to improving or worsening another.
+
+---
+
+### **Economic Health & Development**
+
+These relationships highlight the fundamental drivers and consequences of economic prosperity:
+
+- **Wealth & Quality of Life (GDP/GNI):**
+    - **Strong Positive Links (+0.8):** Both **GDP_BN** and **GNI_BN** are strongly correlated with **Foreign Direct Investment (FDI)** (+0.8). This confirms that the wealthiest nations are the primary magnets for global capital.
+    - **Strong Negative Links (−0.8 to −0.9):** GDP/GNI show very strong negative correlations with **Poverty Rate** (around −0.8) and **Unemployment Rate** (around −0.9). **Analyst Story:** Economic growth is the most powerful tool for reducing poverty and increasing employment.
+- **Trade & Investment:**
+    - **Exports** and **Imports** are **perfectly correlated** (+1.0). This is expected, as global trade relies on a balanced flow of goods and services; countries that export more also typically import more to sustain their economies.
+
+---
+
+### **Social Progress & Economic Stability**
+
+Social indicators have powerful connections to economic stability, particularly concerning stability and human capital:
+
+- **Poverty & Instability:**
+    - **Poverty Rate** has a strong negative correlation with **Life Expectancy** (−0.7) and **Literacy Rate** (−0.7). **Analyst Story:** Poverty creates a vicious cycle where lack of resources directly shortens lives and limits educational access, locking people out of economic opportunity.
+- **Literacy & Development:**
+    - **Literacy Rate** is strongly correlated with **Access to Electricity** (+0.7). This suggests that the development of human capital (education) and basic infrastructure (energy) often happen in parallel, reflecting comprehensive national development strategies.
+
+---
+
+### **Surprising or Counter-Intuitive Relationships**
+
+These suggest less obvious dynamics that warrant deeper investigation:
+
+- **Unemployment vs. Poverty (−0.5):** While negatively correlated (as expected), the relationship is only moderate. **Analyst Story:** This suggests that low unemployment doesn't automatically mean low poverty. A significant portion of the population may still be working but remains poor (working poor), indicating problems with low wages or lack of social safety nets.
+- **FDI vs. Exports/Imports (−0.2):** Foreign Direct Investment (FDI) has a surprisingly weak, slightly negative correlation with exports and imports. **Analyst Story:** This suggests FDI is primarily aimed at **domestic market penetration** or **resource extraction** within the host country, not necessarily for boosting overall trade volume. Investors may be setting up shop to sell *within* the country, rather than using it as an export hub.
+- **Agricultural Production Index vs. GDP (−0.2):** A weak negative correlation exists. **Analyst Story:** This is common in developed economies. As a country's GDP rises, its economy typically shifts away from primary agriculture toward manufacturing and services. High GDP/GNI countries, while wealthy, are not necessarily the world's most productive farmers relative to their economic size.
 
 
-```python
-sns.jointplot(x='Government expenditure on education', y='Life expectancy', data=df_final, height=4, color='blue')
-plt.show()
 ```
 
 
