@@ -106,18 +106,6 @@ The EDA focused on **pattern recognition, anomaly detection, and relationship ma
 
 ---
 
-## Author & Contact
-
-**👨‍💻 Rahul Googikoll**
-
-- **Role:** Data Analyst
-- **Location:** Goa, India
-- **Email:** raulgoogikoll23@gmail.com
-- **LinkedIn:** https://www.linkedin.com/in/rahulgoogikoll
-- **Portfolio:** https://master--rahulgoogikolll2001.netlify.app/
-
-
----    
 <img width="1389" height="990" alt="output_32_0" src="https://github.com/user-attachments/assets/f095e384-c4c5-4901-8516-066914a7166b" />
 
 This collection of histograms offers a powerful, data-driven narrative about the **Progressive but Unequal World**. It moves beyond simple metrics to reveal the deep structural differences between nations, providing a critical foundation for strategic policy and product decisions.
@@ -143,7 +131,7 @@ Global economic power is overwhelmingly centralized. The world's wealth distribu
 
 ---
 
-## The Global Convergence: Social Development IndicatorsUniversal access to basic human development is an achievable global reality. This convergence creates a massive, *qualitatively similar* global consumer base.
+The Global Convergence: Social Development IndicatorsUniversal access to basic human development is an achievable global reality. This convergence creates a massive, *qualitatively similar* global consumer base.
 
 | **Indicator** | **Distribution Shape** | **Data-Driven Story (What it means for Product Strategy)** |
 | --- | --- | --- |
@@ -227,7 +215,7 @@ Agricultural productivity is more stable than land area allocation, suggesting g
 
 <img width="932" height="724" alt="504559803-49d12ec6-16a8-4ec1-af18-e1c9cfb6937c" src="https://github.com/user-attachments/assets/8c8e45c7-6a7e-4597-9fd6-7bb640a7e129" />
 
-- 
+
 
 This bar chart on **Outlier Percentage** quantifies the degree of **global heterogeneity** for each socioeconomic indicator. It's a crucial tool for an analyst to determine which global average metrics are reliable and which are misleading due to extreme national deviations.
 
@@ -363,8 +351,7 @@ The most distinct feature is the **vertical cluster of outliers** around a GCF o
 
 - **Poverty Rate (Right Histogram):** Highly skewed, with most countries clustered at very low poverty rates (0-2.5%), reinforcing the idea that high poverty is an issue of acute national crisis for a few.
 - **Gross Capital Formation (Top Histogram):** Shows a fairly spread-out distribution, indicating that countries vary significantly in the percentage of their GDP they reinvest.
-
-**Conclusion for Policy/Strategy:** While investment (GCF) is a necessary condition for low poverty, it is **not sufficient**. Policy must focus not just on the *level* of investment but on its **quality and inclusivity** to ensure it translates into broad-based job creation and poverty reduction.
+Conclusion for Policy/Strategy:** While investment (GCF) is a necessary condition for low poverty, it is **not sufficient**. Policy must focus not just on the *level* of investment but on its **quality and inclusivity** to ensure it translates into broad-based job creation and poverty reduction.
 ---
 
 <img width="385" height="390" alt="5b4670e4-5c8f-4a79-88bf-2289b766434f" src="https://github.com/user-attachments/assets/0f43ff7c-b9d3-49f0-94cb-802030936e67" />
@@ -632,3 +619,12 @@ The chart reveals a period of increasing trade deficit followed by a dramatic re
 - **Investment Context:** Given India's **strong positive percentage change in FDI** (seen in a prior bar chart), the narrowing trade deficit in 2018-2020, combined with sustained capital inflows, suggests a fundamental strengthening of its external sector.
 
 ---
+
+Author & Contact
+👨‍💻 Rahul Googikoll
+
+Role: Data Analyst
+Email: raulgoogikoll23@gmail.com
+LinkedIn: https://www.linkedin.com/in/rahulgoogikoll
+Portfolio: https://master--rahulgoogikolll2001.netlify.app/
+
