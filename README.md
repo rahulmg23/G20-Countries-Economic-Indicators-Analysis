@@ -105,12 +105,11 @@ The EDA focused on **pattern recognition, anomaly detection, and relationship ma
 3. **API Integration:** Expand analysis to $200+$ countries using live World Bank/IMF APIs for real-time data ingestion and analysis.
 
 ---
+## The Dual-Speed Global Economy
 
 <img width="1389" height="990" alt="output_32_0" src="https://github.com/user-attachments/assets/f095e384-c4c5-4901-8516-066914a7166b" />
 
 This collection of histograms offers a powerful, data-driven narrative about the **Progressive but Unequal World**. It moves beyond simple metrics to reveal the deep structural differences between nations, providing a critical foundation for strategic policy and product decisions.
-
-## The Dual-Speed Global Economy
 
 The global development landscape is one of stark contrasts. **Social welfare is converging**—most countries have achieved high marks in health, education, and basic infrastructure. However, **economic prosperity is heavily centralized and unequal**, with a few nations dominating wealth, investment, and productivity.
 
@@ -212,6 +211,7 @@ Agricultural productivity is more stable than land area allocation, suggesting g
 
 --
 
+## Outlier Percentage 
 
 <img width="932" height="724" alt="504559803-49d12ec6-16a8-4ec1-af18-e1c9cfb6937c" src="https://github.com/user-attachments/assets/8c8e45c7-6a7e-4597-9fd6-7bb640a7e129" />
 
@@ -248,6 +248,7 @@ These metrics have low or zero outlier percentages, signaling that the majority 
 | **Life expectancy, Mobile phone subscriptions, Exports/Imports, Agricultural land area** | **~0%** | **Universal Baselines.** These zero-outlier metrics are the foundation for a **Global Standard Strategy**. Every country falls within the normal range for these factors. **Action:** Assume near-universal mobile connectivity and basic health for all global product users. |
 
 --
+## Correlation Matrix
 
 <img width="900" height="920" alt="68e80b34-084e-4239-b3b7-c3bca0780662" src="https://github.com/user-attachments/assets/2c31fb8d-3f4d-40ba-a7dc-1104af17c98c" />
 
@@ -295,12 +296,11 @@ These moderate correlations require a more nuanced interpretation:
 - **Agricultural Production Index vs. GDP ($-0.2$):** A weak negative correlation. **Analyst Story:** This is typical of developed economies. As a nation's $\text{GDP}$ rises, its economic focus shifts from agriculture to higher-value services and manufacturing, causing the agricultural sector's importance (and relative growth) to decline.
 
 ---
+## Analysis of GDP and GNI Relationship
 
 <img width="412" height="390" alt="96e0bc18-d170-4599-add5-cdb484d9f76d" src="https://github.com/user-attachments/assets/d7477bb9-9e8a-448e-bf84-2996ff2bcedf" />
 
 This image is a **Joint Plot** showing the relationship between **GDP (Gross Domestic Product)** and **GNI (Gross National Income)**.
-
-## Analysis of GDP and GNI Relationship
 
 ### Core Relationship
 
@@ -326,11 +326,11 @@ This plot confirms that for almost all global economic analysis, **GDP and GNI a
 - **Focus on the Skew:** The key takeaway is the **extreme concentration of wealth**. Economic analysis and market sizing must focus on the two distinct groups: the large mass of countries with low GDP/GNI and the few economic giants driving the high values. The total number of high-wealth countries is small, but their economic impact is massive.
 
 ---
+## Analysis of Capital Formation and Poverty
+
 <img width="385" height="390" alt="e8b46a11-7155-4919-b3c2-16ce33c9b3a9" src="https://github.com/user-attachments/assets/cb6ec426-95aa-40ba-a9c6-ce16f1dcda63" />
 
 This image is a **Joint Plot** illustrating the relationship between **Gross Capital Formation (%)** and **Poverty Rate (%)**. It reveals a complex, non-linear relationship between investment and poverty across countries.
-
-## Analysis of Capital Formation and Poverty
 
 ### 1. The Core Relationship: High Investment, Low Poverty (Mostly)
 
@@ -353,15 +353,13 @@ The most distinct feature is the **vertical cluster of outliers** around a GCF o
 - **Gross Capital Formation (Top Histogram):** Shows a fairly spread-out distribution, indicating that countries vary significantly in the percentage of their GDP they reinvest.
 Conclusion for Policy/Strategy:** While investment (GCF) is a necessary condition for low poverty, it is **not sufficient**. Policy must focus not just on the *level* of investment but on its **quality and inclusivity** to ensure it translates into broad-based job creation and poverty reduction.
 ---
+## Analysis of Education Spending vs. Life Expectancy
 
 <img width="385" height="390" alt="5b4670e4-5c8f-4a79-88bf-2289b766434f" src="https://github.com/user-attachments/assets/0f43ff7c-b9d3-49f0-94cb-802030936e67" />
-
 
 This **Joint Plot** explores the relationship between **Government Expenditure on Education (% of GDP)** and **Life Expectancy (Years)** across various countries.
 
 The analysis shows a complex, **non-linear relationship** that suggests public investment in education is a necessary but not sufficient factor for achieving high life expectancy.
-
-## Analysis of Education Spending vs. Life Expectancy
 
 ### 1. The Core Relationship: Diminishing Returns
 
@@ -384,12 +382,12 @@ There is a weak, overall **positive correlation**, but the data points form dist
 **Conclusion for Policy/Strategy:** Investment in education is crucial to get countries off the low end of the life expectancy scale. However, for most countries already in the moderate spending range, **additional spending on education is unlikely to be the primary driver for further health gains**. Policy focus should shift to **healthcare infrastructure, sanitation, and addressing income inequality** to push life expectancy toward the maximum.
 
 ---
+## Analysis of Life Expectancy Trends (2015-2020)
+
 
 <img width="922" height="586" alt="535efa0b-8b83-4eb8-973c-f5e64e9b9ec4" src="https://github.com/user-attachments/assets/227e5037-c606-4a0f-9316-6fa292a50fc9" />
 
 This bar chart illustrates the **Percentage Change in Life Expectancy from 2015 to 2020** for a selection of countries. This period is critical as it covers the immediate pre-pandemic years and the initial year of the COVID-19 pandemic, which significantly impacted global health outcomes.
-
-## Analysis of Life Expectancy Trends (2015-2020)
 
 The data clearly separates countries into two strategic groups: those that managed to achieve **health gains** and those that experienced **significant reversals**.
 
@@ -460,12 +458,12 @@ The right side of the chart shows a long list of countries where FDI growth was 
 3. **FDI as a Leading Indicator:** The stark polarization in this chart signals **future economic divergence**. Countries that successfully attracted capital (Group 1) are likely poised for stronger future economic growth, while those losing capital (Group 2) face headwinds in sustaining long-term development.
 
 ---
+## Analysis of Global Capital Flow Trends (2015-2020)
+
 
 <img width="940" height="586" alt="504560452-6ee86bc9-018d-4c4a-9deb-16914c90a33e" src="https://github.com/user-attachments/assets/cbc51d65-9e0f-4993-9ff4-eb6d69d1dd5a" />
 
 This bar chart illustrates the **Percentage Change in Foreign Direct Investment (FDI) from 2015 to 2020** for a selection of major global economies. This data highlights which countries successfully attracted or retained capital, and which experienced significant divestment, during a period of moderate economic growth followed by the initial global shock of 2020.
-
-## Analysis of Global Capital Flow Trends (2015-2020)
 
 The chart reveals an extremely polarized landscape for capital flow, demonstrating that investment growth was highly concentrated in a few markets while many others saw stagnation or massive withdrawal.
 
@@ -551,12 +549,14 @@ Mexico started with the deepest deficit but achieved the most consistent, positi
 - **Risk vs. Stability:** The chart highlights **Argentina's high economic volatility**, making it a riskier market for long-term planning, versus **Mexico's consistent, upward trade performance**, which suggests greater stability for export-oriented businesses.
 - **Drivers of Trade Balance:** The data implies that while **Brazil** and **Mexico** achieved gains through organic or managed adjustments, **Argentina's trade surplus was primarily a consequence of severe economic instability** (devaluation) rather than sustained export competitiveness.
 
+
 ---
+## Trade Balance Trends: Canada vs. United States (2015-2020)
+
+
 <img width="858" height="375" alt="fd5bfda2-7bde-4a43-b616-75d806b1101b" src="https://github.com/user-attachments/assets/a4b6d196-8f4a-40f1-a93e-bb36e307570b" />
 
 This line chart illustrates the **Net Export/Import Balance (net_exim_bal)** for **Canada and the United States** from 2015 to 2020. Since the values are all negative, both countries ran a persistent **trade deficit** throughout the period. The chart tracks the size of these deficits relative to each country's GDP
-
-## Trade Balance Trends: Canada vs. United States (2015-2020)
 
 Both North American giants consistently imported more than they exported, but they followed different trajectories and maintained different deficit magnitudes.
 
@@ -590,12 +590,12 @@ The U.S. trade balance was relatively stable, oscillating within a tight range:
 - **Investment Opportunity:** Both countries present a massive, import-driven market, but the U.S. offers the **largest and most stable deficit environment**, making it a highly predictable target market for foreign exporters.
 
 ---
+## Trade Balance Dynamics for India (2015-2020)
+
 
 <img width="858" height="371" alt="504560663-70c46191-6b9c-4126-a4f3-c9bb4207402a" src="https://github.com/user-attachments/assets/f58a2a12-ed27-42b7-b7a4-62d8e9fb24e2" />
 
 This image is a line chart showing the **Net Export/Import Balance (net_exim_bal)** for **India** from 2015 to 2020. This metric is expressed as a negative value, indicating that India maintained a persistent **trade deficit** throughout the period.
-
-## Trade Balance Dynamics for India (2015-2020)
 
 The chart reveals a period of increasing trade deficit followed by a dramatic reversal, culminating in a significant improvement in the balance by 2020.
 
