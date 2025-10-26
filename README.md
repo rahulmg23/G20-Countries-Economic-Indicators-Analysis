@@ -122,7 +122,7 @@ The EDA focused on **pattern recognition, anomaly detection, and relationship ma
 
 This collection of histograms offers a powerful, data-driven narrative about the **Progressive but Unequal World**. It moves beyond simple metrics to reveal the deep structural differences between nations, providing a critical foundation for strategic policy and product decisions.
 
-## Executive Summary: The Dual-Speed Global Economy
+## The Dual-Speed Global Economy
 
 The global development landscape is one of stark contrasts. **Social welfare is converging**—most countries have achieved high marks in health, education, and basic infrastructure. However, **economic prosperity is heavily centralized and unequal**, with a few nations dominating wealth, investment, and productivity.
 
