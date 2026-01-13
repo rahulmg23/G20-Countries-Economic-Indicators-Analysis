@@ -8,7 +8,7 @@
 
 This project provides a **comprehensive, evidence-based Exploratory Data Analysis (EDA)** of global socioeconomic indicators, moving beyond simple metrics to quantify structural relationships that drive national prosperity and risk.
 
-We identify the critical drivers of economic growth, highlight the entrenched **Global Development Disparity**, and provide **data-driven insights** crucial for policymakers, investors, and product analysts focusing on the G20 and major global economies.
+We identify the critical drivers of economic growth, highlight the entrenched **Global Development Disparity**, and provide **data-driven insights** crucial for policymakers, investors, and product analysts focusing on the G20 and major global economies
 
 ---
 
