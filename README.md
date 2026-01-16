@@ -1,4 +1,4 @@
-# G20 & Global Economic Indicators Analysis Driving Strategic Decisions with Data
+# G 20 & Global Economic Indicators Analysis Driving Strategic Decisions with Data
 
 **Repository Status:** Complete | **Analysis Period:** 2000–2023 | **Focus:** Global Development Disparity & Economic Lever
 
